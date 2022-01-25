@@ -1,0 +1,15 @@
+/*rectangle de page */
+.container{
+
+}
+
+.rectangle {
+  width: 70%;
+  background-color: rgba(var(--lpink), 0.9);
+  margin: auto;
+  padding-top: 40px;
+}
+
+.aboutMe {
+  padding: 7em;
+}

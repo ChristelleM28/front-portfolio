@@ -1,0 +1,35 @@
+
+/* le boutton */
+.roundButton {
+  font-size: 26px;
+  font-family: Cambria, Cochin, Georgia, serif;
+  background: rgb(var(--blueg));
+  color: rgb(var(--lpink));
+  border-radius: 80px;
+  border: none;
+  width: 110px;
+  height: 110px;
+  margin-top: 120px;
+  margin-bottom: 80px;
+  transition: all 0.15s linear 0s;
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* effet boutton */
+a .plus {
+  display: none;
+}
+a:hover .plus {
+  display: block;
+}
+a:hover .titre {
+  display: none;
+}
+button:hover {
+  transform: translatex(30px);
+  color: rgb(var(--blueg));
+  background: rgb(var(--lpink));
+  /* display: url("light.png"), auto; */
+}

@@ -1,0 +1,45 @@
+/* détermination variables couleurs type rgb pour gérer opacité */
+:root {
+  --blueg: 109, 138, 141;
+  --green: 101, 140, 129;
+  --black: 0, 13, 12;
+  --lpink: 245, 235, 235;
+  --pink: 242, 203, 194;
+}
+
+/* @font-face {
+  font-family: Cambria, Cochin, Georgia, serif ;
+} */
+
+.App {
+  background: url(/public/assets/fond-portfolio.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: Georgia, serif;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  color: rgb(var(--blueg));
+  /* Fixe l'image en haut à gauche de la page */
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* Préserve le ratio de l'image */
+  min-width: 100%;
+  min-height: 100%;
+}
+
+h1 {
+  font-family: Georgia, serif;
+  font-size: 2em;
+  margin-top: 4em;
+  margin-bottom: 1.5em;
+}
+
+h2 {
+  font-size: 1.7em;
+}
+
+h3 {
+  font-size: 1.1em;
+}
