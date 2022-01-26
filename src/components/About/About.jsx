@@ -1,14 +1,26 @@
 import React from "react";
 import "./About.css";
-import Button from "../Button/Button"
+import Button from "../Button/Button";
+import Footer from "../Footer/Footer";
 
 function About() {
   return (
     <div className="container">
-      <div className="rectangle">
+      <div className="socialMedia">
+        media sociaux ici
+      </div>
+      <div className="rectangleAbout">
         <div className="aboutMe">
-          <h1>ABOUT ME</h1>
+          <h2>ABOUT ME</h2>
           <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo facilis
+            blanditiis voluptatibus impedit dignissimos accusantium illo fuga
+            perspiciatis, voluptas vel unde? Quae soluta eaque totam neque
+            doloribus sit nam voluptas.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo facilis
+            blanditiis voluptatibus impedit dignissimos accusantium illo fuga
+            perspiciatis, voluptas vel unde? Quae soluta eaque totam neque
+            doloribus sit nam voluptas.
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo facilis
             blanditiis voluptatibus impedit dignissimos accusantium illo fuga
             perspiciatis, voluptas vel unde? Quae soluta eaque totam neque
@@ -21,7 +33,9 @@ function About() {
         </div>
         <Button/> 
       </div>
+      <Footer/>
     </div>
+    
   );
 }
 

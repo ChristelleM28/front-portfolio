@@ -7,39 +7,33 @@
   --pink: 242, 203, 194;
 }
 
-/* @font-face {
-  font-family: Cambria, Cochin, Georgia, serif ;
-} */
-
-.App {
-  background: url(/public/assets/fond-portfolio.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  font-family: Georgia, serif;
+body {
+  padding: 0;
   width: 100%;
-  height: auto;
-  text-align: center;
+  background: url(/public/assets/fond-portfolio.png) no-repeat center center fixed;
+  background-size: cover;
   color: rgb(var(--blueg));
-  /* Fixe l'image en haut à gauche de la page */
-  position: fixed;
-  top: 0;
-  left: 0;
-  /* Préserve le ratio de l'image */
-  min-width: 100%;
-  min-height: 100%;
+  font-family: Georgia, serif;
+  margin: auto;
+  text-align: center;
 }
 
 h1 {
-  font-family: Georgia, serif;
   font-size: 2em;
-  margin-top: 4em;
-  margin-bottom: 1.5em;
+  margin: 50px auto 50px auto;
 }
 
 h2 {
-  font-size: 1.7em;
+  font-size: 1.4em;
+  
 }
 
 h3 {
   font-size: 1.1em;
+}
+
+@media only screen {
+  .App {
+    bottom: 0;
+  }
 }
