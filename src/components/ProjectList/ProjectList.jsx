@@ -1,12 +1,60 @@
-import React from 'react';
+import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
+import "./ProjectList.css";
 
 function ProjectList() {
+  const datas = [
+    {
+      id: 1,
+      image:
+        "https://images.pexels.com/photos/1619317/pexels-photo-1619317.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      title: "Image 1",
+      description:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem voluptas fuga distinctio, animi corrupti possimus voluptatum? Quod aut quidem praesentium minima optio, voluptatem laborum adipisci tenetur, nostrum architecto ea cumque?",
+    },
+
+    {
+      id: 2,
+      image:
+        "https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      title: "Image 2",
+      description:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem voluptas fuga distinctio, animi corrupti possimus voluptatum? Quod aut quidem praesentium minima optio, voluptatem laborum adipisci tenetur, nostrum architecto ea cumque?",
+    },
+
+    {
+      id: 3,
+      image:
+        "https://images.pexels.com/photos/592077/pexels-photo-592077.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      title: "Image 3",
+      description:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem voluptas fuga distinctio, animi corrupti possimus voluptatum? Quod aut quidem praesentium minima optio, voluptatem laborum adipisci tenetur, nostrum architecto ea cumque?",
+    },
+  ];
+
   return (
-  <div className="contentCarousel">
-Ici carousel
-  </div>
+    <div className="projectListcontainer">
+      <div classeName="projectListTitle">
+        Voici la liste des projets que j'ai réalisé
+      </div>
+      <div className="contentCarousel">
+        <Carousel infiniteLoop>
+          {datas.map(ProjectListSlide => (
+            <div key={ProjectListSlide.id}>
+              <img src={ProjectListSlide.image} alt="" className="img-size" />
+              <div className="overlay">
+                <h2 className="overlay-title">{ProjectListSlide.title}</h2>
+                <p className="overlay-text">{ProjectListSlide.text}</p>
+                <p className="overlay-description">
+                  {ProjectListSlide.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </Carousel>
+      </div>
+    </div>
   );
 }
 

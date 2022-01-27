@@ -1,1 +1,86 @@
+.carousel {
+  position: relative;
+  background-color: rgba(var(--lpink), 0.5);
+  margin: 50px;
+}
+
+.carousel .overlay {
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 2%;
+  padding: 0.4rem 1.5rem;
+  text-align: left;
+  background: hsla(0, 0%, 0%, 0.5);
+  color: white;
+}
+
+/* .img-size {
+  height: auto;
+  margin: 15px;
+} */
+
+/* .overlay {
+  box-shadow: 5px;
+  border-radius: 15px;
+  padding: 5px;
+  margin-top:100px;
+} */
+
+/* .carousel .overlay-title {
+  margin: 0.8rem 0 1rem;
+} */
+
+/* pour les miniatures */
+.carousel .thumbs {
+  display: flex;
+  justify-content: center;
+  margin:0;
+  padding:10px;
+cursor: pointer;
+}
+
+.carousel .thumb {
+margin: 0 5px;
+}
+
+
+/* pour les flèches de défilement */
+.control-arrow {
+  display: none;
+}
+
+/* pour le décompte des slides */
+.carousel-status {
+  display: none;
+}
+
+/* .projectListContainer{
+  background-color: rgba(var(--lpink), 0.5);
+}
+
+.projectListTitle{
+  margin: 100px;
+  }
+
+.contentCarousel {
+  margin:80px;
+}
+ */
+  
+
+
+/* .carousel .slider {
+  margin:100px;
+  background: red;
+}
+
+.carousel .slide {
+min-width: 100%;
+position: relative;
+}
+
+}*/
+
 
