@@ -1,18 +1,22 @@
-.container{
-margin: 0;
+.container {
+  margin: 0;
 }
 
 /*rectangle de page About*/
 .rectangleAbout {
-  width: 70%;
+  width: 50%;
   background-color: rgba(var(--lpink), 0.9);
-  margin: auto;
-  margin: 100px auto 100px auto;
+  margin: 100px auto 140px auto;
+  border-radius: 15px;
 }
 
 .aboutMe {
-  margin: auto;
+  margin: 10%;
   padding: 80px 30px 0 30px;
+  text-align: left;
+}
+h2 {
+  color: rgb(var(--blueg));
 }
 
 p {

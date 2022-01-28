@@ -1,9 +1,10 @@
 /*rectangle de page Home*/
 .rectangleHome {
-  width: 70%;
+  width: 50%;
   background-color: rgba(var(--lpink), 0.9);
   margin: auto;
   margin: 100px auto 100px auto;
+  border-radius: 15px;
   }
 
 
@@ -38,10 +39,11 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgb(var(--blueg));
+  background: rgba(var(--blueg));
   color: rgb(var(--lpink));
   height: 50px;
   width:100%; 
+  border-radius: 0 0 15px 15px;
 }
 .span{
   text-align: center;

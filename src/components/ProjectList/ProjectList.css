@@ -1,1 +1,69 @@
+.projectListContainer {
+  margin: 200px;
+  background-color: rgba(var(--lpink), 0.5);
+  padding: 3rem;
+  border-radius: 15px;
+}
 
+.projectListTitle {
+  color: #ffff;
+}
+
+.carousel {
+  position: relative;
+}
+
+.contentCarousel {
+  width: 80%;
+  margin: auto;
+}
+
+.carousel .slider {
+  margin: auto;
+  width: 60%;
+}
+
+.carousel .slide {
+  margin: 100px 20px 20px 20px;
+  min-width: 100%;
+}
+
+.carousel .overlay {
+  width: 80%;
+  position: absolute;
+  top: 60%;
+  transform: translateY(-50%);
+  right: 2%;
+  padding: 0.4rem 1.5rem;
+  text-align: left;
+  background: hsla(0, 0%, 0%, 0.5);
+  color:#ffff;
+}
+
+.overlay {
+  box-shadow: 5px;
+  border-radius: 15px;
+  padding: 5px;
+  margin-top: 100px;
+}
+
+/* pour les miniatures */
+.carousel .thumbs {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.carousel .thumb {
+  margin: 0 10px;
+}
+
+/* .carousel .control-arrow, */
+/* .carousel.carousel-slider .control-arrow 
+
+  {transition: none;
+    */
+.carousel-slider .control-arrow {
+  transition:none}

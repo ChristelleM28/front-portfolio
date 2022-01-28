@@ -1,0 +1,32 @@
+form {
+  padding: 1rem;
+  width: 30%;
+  height: 40rem;
+  margin: 100px auto;
+  padding: 100px 100px;
+  border-radius: 15px;
+  position: relative;
+  /* background-color: rgba(var(--green), 0.6); */
+}
+
+input {
+  background-color: rgba(var(--lpink), 0.1);
+  height: 2rem;
+  width: 80%;
+  margin-bottom: 2rem;
+}
+
+input::placeholder{
+  color: rgba(var(--lpink));
+  font-size: 1.5em;
+}
+
+.admin{
+  color:#ffff;
+}
+
+/* @media screen and (max-width: 400px) {
+  form {
+    width: 80%;
+  }
+} */
