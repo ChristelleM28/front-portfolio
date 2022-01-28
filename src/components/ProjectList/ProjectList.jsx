@@ -31,16 +31,66 @@ function ProjectList() {
       description:
         "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem voluptas fuga distinctio, animi corrupti possimus voluptatum? Quod aut quidem praesentium minima optio, voluptatem laborum adipisci tenetur, nostrum architecto ea cumque?",
     },
+
+    {
+      id: 4,
+      image:
+        "https://images.pexels.com/photos/1619317/pexels-photo-1619317.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      title: "Image 4",
+      description:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem voluptas fuga distinctio, animi corrupti possimus voluptatum? Quod aut quidem praesentium minima optio, voluptatem laborum adipisci tenetur, nostrum architecto ea cumque?",
+    },
+
+    {
+      id: 5,
+      image:
+        "https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      title: "Image 5",
+      description:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem voluptas fuga distinctio, animi corrupti possimus voluptatum? Quod aut quidem praesentium minima optio, voluptatem laborum adipisci tenetur, nostrum architecto ea cumque?",
+    },
+    {
+      id: 6,
+      image:
+        "https://images.pexels.com/photos/592077/pexels-photo-592077.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      title: "Image 6",
+      description:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem voluptas fuga distinctio, animi corrupti possimus voluptatum? Quod aut quidem praesentium minima optio, voluptatem laborum adipisci tenetur, nostrum architecto ea cumque?",
+    },
+
+    {
+      id: 7,
+      image:
+        "https://images.pexels.com/photos/1619317/pexels-photo-1619317.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      title: "Image 7",
+      description:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem voluptas fuga distinctio, animi corrupti possimus voluptatum? Quod aut quidem praesentium minima optio, voluptatem laborum adipisci tenetur, nostrum architecto ea cumque?",
+    },
+
+    {
+      id: 8,
+      image:
+        "https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      title: "Image 8",
+      description:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem voluptas fuga distinctio, animi corrupti possimus voluptatum? Quod aut quidem praesentium minima optio, voluptatem laborum adipisci tenetur, nostrum architecto ea cumque?",
+    },
   ];
 
   return (
-    <div className="projectListcontainer">
-      <div classeName="projectListTitle">
-        Voici la liste des projets que j'ai réalisé
+    <div className="projectListContainer">
+      <div >
+        <h2 classeName="projectListTitle">Voici un aperçu des projets que j'ai réalisé</h2>
       </div>
       <div className="contentCarousel">
-        <Carousel infiniteLoop>
-          {datas.map(ProjectListSlide => (
+        <Carousel
+          infiniteLoop
+          thumbWidth={100}
+          showIndicators={false}
+          // showArrows={false}
+          showStatus={false}
+        >
+          {datas.map((ProjectListSlide) => (
             <div key={ProjectListSlide.id}>
               <img src={ProjectListSlide.image} alt="" className="img-size" />
               <div className="overlay">

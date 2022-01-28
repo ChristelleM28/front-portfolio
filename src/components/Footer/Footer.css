@@ -1,24 +1,27 @@
 .footerMenu {
   position: fixed;
-   bottom: 0;
-  right: 0;
-  left:0;
   bottom: 0;
- }
+  right: 0;
+  left: 0;
+  bottom: 0;
+ 
+}
 
 .footerButton {
-  font-size: 20px;
+  font-size: 30px;
   font-family: Georgia, serif;
-  background-color: rgba(var(--lpink), 0.5);
-  color: rgba(var(--greenb), 0.9);
-  border-radius: 50px 50px 0 0;
-  width: 100px;
-  height: 50px;
-  margin:auto;
+  background-color: rgba(var(--lpink), 0.3);
+  color: rgba(var(--lpink), 0.9);
+  border-radius: 130px 130px 0 0;
+  width: 80px;
+  height:10px;
+  margin: auto;
+  margin-top: 30px;
+  padding:35px;
 }
 
 .footerButton:hover {
   cursor: pointer;
-  transform: scale(2);
+  transform: scale(1.5);
   /* transform: rotate(0.25turn); */
 }

@@ -1,0 +1,41 @@
+.contactMe {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+form {
+  padding: 1rem;
+  width: 30%;
+  height: 40rem;
+  margin: 100px auto 140px auto;
+  padding: 100px 150px;
+  border-radius: 15px;
+  position: relative;
+  background-color: rgba(var(--lpink), 0.6);
+}
+
+input {
+  background-color: rgba(var(--lpink), 0.5);
+  color: rgba(var(--green), 0.9);
+  height: 2rem;
+  width: 80%;
+  margin-bottom: 2rem;
+}
+
+textarea {
+  height: 10rem;
+  background-color: rgba(var(--lpink), 0.5);
+  width: 80%;
+  
+  font-size: 1.5em;
+}
+
+textarea::placeholder {
+  color: rgba(var(--green), 0.9);
+}
+
+@media screen and (max-width: 400px) {
+  form {
+    width: 80%;
+  }
+}

@@ -24,12 +24,17 @@ h1 {
 }
 
 h2 {
-  font-size: 1.4em;
-  
+  font-size: 1.5em;
+  text-align: center;
+  color: rgb(var(--blueg));
 }
 
 h3 {
   font-size: 1.1em;
+}
+
+p{
+  font-size:1.5rem;
 }
 
 @media only screen {

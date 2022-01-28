@@ -4,7 +4,7 @@ import "./Project.css";
 function Project() {
   return(
    <div>
-Ici carousel de projet
+Ici Nom du projet
    </div>);
 }
 
