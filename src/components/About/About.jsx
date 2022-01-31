@@ -25,12 +25,7 @@ function About() {
             blanditiis voluptatibus impedit dignissimos accusantium illo fuga
             perspiciatis, voluptas vel unde? Quae soluta eaque totam neque
             doloribus sit nam voluptas.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo facilis
-            blanditiis voluptatibus impedit dignissimos accusantium illo fuga
-            perspiciatis, voluptas vel unde? Quae soluta eaque totam neque
-            doloribus sit nam voluptas.
-          
-          
+                      
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo facilis
             blanditiis voluptatibus impedit dignissimos accusantium illo fuga
             perspiciatis, voluptas vel unde? Quae soluta eaque totam neque
@@ -49,8 +44,8 @@ function About() {
             doloribus sit nam voluptas.
 </p>
         </div>
-        <Button/> 
-      </div>
+        <Button title="My CV" more="Let's go!"/>
+        </div>
       <Footer/>
     </div>
     

@@ -2,6 +2,7 @@ import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import "./ProjectList.css";
+import Footer from "../Footer/Footer";
 
 function ProjectList() {
   const datas = [
@@ -80,7 +81,7 @@ function ProjectList() {
   return (
     <div className="projectListContainer">
       <div >
-        <h2 classeName="projectListTitle">Voici un aperçu des projets que j'ai réalisé</h2>
+        <h3 classeName="projectListTitle">Voici un aperçu des projets que j'ai réalisé</h3>
       </div>
       <div className="contentCarousel">
         <Carousel
@@ -94,7 +95,7 @@ function ProjectList() {
             <div key={ProjectListSlide.id}>
               <img src={ProjectListSlide.image} alt="" className="img-size" />
               <div className="overlay">
-                <h2 className="overlay-title">{ProjectListSlide.title}</h2>
+                <h3 className="overlay-title">{ProjectListSlide.title}</h3>
                 <p className="overlay-text">{ProjectListSlide.text}</p>
                 <p className="overlay-description">
                   {ProjectListSlide.description}
@@ -104,6 +105,7 @@ function ProjectList() {
           ))}
         </Carousel>
       </div>
+      <Footer/>
     </div>
   );
 }

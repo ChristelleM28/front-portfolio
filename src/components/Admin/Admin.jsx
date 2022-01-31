@@ -7,16 +7,17 @@ import Button from "../Button/Button";
 function Admin() {
   return (
   
-    <div className="containerAdmin">
-      <form>
+    <div>
+      <form id="formAdmin">
         <h2 className="admin"> ADMIN </h2>
         <div className="containerAdmin">
+
           <div>
             <label htmlFor="email" className="email">
               <input
                 type="email"
                 id="email"
-                placeholder="Email"
+                placeholder="@"
                 // value={email}
                 // onChange={handleEmailChange}
                 // required
@@ -35,11 +36,13 @@ function Admin() {
               />
             </label>
           </div>
-          <Button/>
+
+          <Button titre="Send" plus="Let's go!"/>
         </div>
       </form>
       {/* <Footer/> */}
-    </div>
+      </div>
+
   );
 }
 

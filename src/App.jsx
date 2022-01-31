@@ -19,10 +19,9 @@ function App() {
         <Route path="/ProjectList" element={<ProjectList />}></Route>
         <Route path="/Project" element={<Project />}></Route>
         <Route path="/Contact" element={<Contact />}></Route>
-        <Route path="/Admin" element={<Admin/>}>
-          <Route path="DashboardProject" element={<DashboardProject />}></Route>
-          <Route path="DashboardImage" element={<DashboardImage />}></Route>
-        </Route>
+        <Route path="/Admin" element={<Admin />}></Route>
+        <Route path="Admin/DashboardProject" element={<DashboardProject />}></Route>
+        <Route path="Admin/DashboardImage" element={<DashboardImage />}></Route>
       </Routes>
     </div>
   );

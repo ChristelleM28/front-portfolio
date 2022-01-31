@@ -1,16 +1,14 @@
-form {
-  padding: 1rem;
+form#formAdmin {
   width: 30%;
-  height: 40rem;
-  margin: 100px auto;
-  padding: 100px 100px;
-  border-radius: 15px;
-  position: relative;
-  /* background-color: rgba(var(--green), 0.6); */
+  height: auto;
+  margin: 120px auto;
+  padding: 120px 120px;
+  border-radius: 250px;
+  background-color: rgba(var(--green), 0.8);
 }
 
 input {
-  background-color: rgba(var(--lpink), 0.1);
+  background-color: rgba(var(--lpink), 0.5);
   height: 2rem;
   width: 80%;
   margin-bottom: 2rem;
@@ -23,10 +21,20 @@ input::placeholder{
 
 .admin{
   color:#ffff;
+  padding: 0 0 3rem 0;
 }
 
-/* @media screen and (max-width: 400px) {
-  form {
+#o
+{
+  color: red;
+}
+
+/* 
+@media screen and (max-width: 480px)and (min-width: 720px) {
+input {
+    background-color: rgba(var(--lpink), 0.5);
+    height: 2rem;
     width: 80%;
-  }
-} */
+    margin-bottom: 2rem;
+  } */
+ /* } */

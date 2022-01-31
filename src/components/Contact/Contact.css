@@ -1,6 +1,5 @@
 .contactMe {
-  padding-left: 30px;
-  padding-right: 30px;
+  padding:0 3rem 3rem 3rem;
 }
 
 form {
@@ -11,11 +10,11 @@ form {
   padding: 100px 150px;
   border-radius: 15px;
   position: relative;
-  background-color: rgba(var(--lpink), 0.6);
+  background-color: rgba(var(--lpink), 0.7);
 }
 
 input {
-  background-color: rgba(var(--lpink), 0.5);
+  background-color: rgba(var(--lpink), 0.1);
   color: rgba(var(--green), 0.9);
   height: 2rem;
   width: 80%;

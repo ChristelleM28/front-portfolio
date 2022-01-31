@@ -1,8 +1,7 @@
 /*rectangle de page Home*/
 .rectangleHome {
-  width: 50%;
+  width: 30%;
   background-color: rgba(var(--lpink), 0.9);
-  margin: auto;
   margin: 100px auto 100px auto;
   border-radius: 15px;
   }
@@ -44,6 +43,7 @@ h2 {
   height: 50px;
   width:100%; 
   border-radius: 0 0 15px 15px;
+  text-decoration: none;
 }
 .span{
   text-align: center;

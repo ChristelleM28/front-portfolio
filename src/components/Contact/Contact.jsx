@@ -1,6 +1,6 @@
 import React from "react";
 import "./Contact.css";
-import Button from "../Button/Button"
+import Button from "../Button/Button";
 import Footer from "../Footer/Footer";
 
 function Contact() {
@@ -9,6 +9,7 @@ function Contact() {
       <form>
         <h2 className="contactMe">CONTACT ME</h2>
         <div className="containerForm">
+          
           <div>
             <label htmlFor="firstName" className="firstName">
               <input
@@ -33,19 +34,23 @@ function Contact() {
               />
             </label>
           </div>
-          <label htmlFor="message" className="message">
-            <textarea
-              type="message"
-              id="message"
-              placeholder="Message"
-              // value={message}
-              // onChange={handleMessageChange}
-            />
-          </label>
-          <Button/>
+
+          <div>
+            <label htmlFor="message" className="message">
+              <textarea
+                type="message"
+                id="message"
+                placeholder="Message"
+                // value={message}
+                // onChange={handleMessageChange}
+              />
+            </label>
+          </div>
+
+          <Button title="Send" more="Thank You!" />
         </div>
       </form>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
