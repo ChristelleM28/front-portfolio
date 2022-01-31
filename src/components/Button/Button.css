@@ -1,4 +1,9 @@
 /* le boutton */
+.divButton {
+  display: inline-block;
+margin:1rem;
+}
+
 .roundButton {
   font-size: 26px;
   font-family: Cambria, Cochin, Georgia, serif;
@@ -8,26 +13,25 @@
   border: none;
   width: 110px;
   height: 110px;
-  margin: 100px auto 80px auto;
+  /* margin: 100px auto 80px auto; */
   transition: all 0.15s linear 0s;
-  /* position: relative; */
   text-decoration: none;
   cursor: pointer;
 }
 
 /* effet boutton */
-a .plus {
+a .more {
   display: none;
 }
-a:hover .plus {
+a:hover .more {
   display: block;
+  color: rgb(var(--blueg));
 }
-a:hover .titre {
+
+a:hover .title {
   display: none;
 }
-button:hover {
+.roundButton:hover {
   transform: translatex(30px);
-  color: rgb(var(--blueg));
   background: rgb(var(--lpink));
-  /* display: url("light.png"), auto; */
 }

@@ -1,12 +1,12 @@
 import React from 'react';
 import "./Button.css";
 
-function Button() {
-  return <div>
+function Button({title,more}) {
+  return <div className="divButton">
     <button className="roundButton">
           <a>
-            <span className="titre">See more</span>
-            <span className="plus">Let's go!</span>
+            <span className="title">{title}</span>
+            <span className="more">{more}</span>
           </a>
         </button>
   </div>;

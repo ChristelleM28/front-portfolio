@@ -8,14 +8,14 @@
 }
 
 body {
-  padding: 0;
-  width: 100%;
+  margin: 0;
   background: url(/public/assets/fond-portfolio.png) no-repeat center center fixed;
+  font-family: Georgia, serif;
+  padding: 0;
+  /* width: 100%; */
   background-size: cover;
   color: rgb(var(--blueg));
-  font-family: Georgia, serif;
-  margin: auto;
-  text-align: center;
+    text-align: center;
 }
 
 h1 {
@@ -30,7 +30,8 @@ h2 {
 }
 
 h3 {
-  font-size: 1.1em;
+  font-size: 1.5em;
+  color:#ffff;
 }
 
 p{

@@ -4,24 +4,43 @@
   right: 0;
   left: 0;
   bottom: 0;
- 
 }
 
 .footerButton {
-  font-size: 30px;
-  font-family: Georgia, serif;
-  background-color: rgba(var(--lpink), 0.3);
+  background-color: rgba(var(--lpink), 0.8);
   color: rgba(var(--lpink), 0.9);
   border-radius: 130px 130px 0 0;
   width: 80px;
-  height:10px;
+  height: 10px;
   margin: auto;
   margin-top: 30px;
-  padding:35px;
+  padding: 35px;
+    /* transform: translateY(-10vw); */
 }
 
 .footerButton:hover {
   cursor: pointer;
   transform: scale(1.5);
-  /* transform: rotate(0.25turn); */
+}
+
+.buttonMenu {
+  font-family: inherit;
+  background-color: transparent;
+  color: rgba(var(--lpink), 0.9);
+  font-size: 30px;
+  border: none;
+}
+
+.footerMenuContent {
+  display: inline-block;
+  text-decoration: none;
+}
+nav {
+display: inline-block;
+justify-content: space-between;
+}
+
+a {
+  text-decoration: none;
+  color: rgba(var(--lpink), 0.9);
 }
