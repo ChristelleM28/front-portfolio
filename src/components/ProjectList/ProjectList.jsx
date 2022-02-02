@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useState, useEffect} from "react";
+import axios from "axios";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import "./ProjectList.css";
 import Footer from "../Footer/Footer";
 
 function ProjectList() {
+// // Je créé ma variable pour stocker mes projets
+//   const [projectList, setProjectList] = useState([]);
+
+//   // je fais mon appel à l'api
+// useEffect(() => {
+  
+//   axios.get()
+// }, []);
+
+
   const datas = [
     {
       id: 1,
@@ -86,7 +97,7 @@ function ProjectList() {
       <div className="contentCarousel">
         <Carousel
           infiniteLoop
-          thumbWidth={100}
+          // thumbWidth={80}
           showIndicators={false}
           // showArrows={false}
           showStatus={false}

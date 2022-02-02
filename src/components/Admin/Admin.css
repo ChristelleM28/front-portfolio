@@ -1,42 +1,39 @@
 form#formAdmin {
-  width: 30%;
-  height: auto;
-  margin: 120px auto;
-  padding: 120px 120px;
-  border-radius: 250px;
+  width: 80%;
+  border-radius: 20rem;
   background-color: rgba(var(--green), 0.8);
+  /* padding: 3rem; */
 }
 
 input {
   background-color: rgba(var(--lpink), 0.5);
   height: 2rem;
   width: 80%;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+  overflow: none;
 }
 
-input::placeholder{
+input::placeholder {
   color: rgba(var(--lpink));
   font-size: 1.5em;
 }
 
-.admin{
-  color:#ffff;
-  padding: 0 0 3rem 0;
+.admin {
+  color: #ffff;
 }
 
-.containerDashboardButton{
-  display: flex;
-  justify-content: space-around;
-  padding-top: 2rem;
-}
-
-
-/* 
-@media screen and (max-width: 480px)and (min-width: 768px) {
-input {
-    background-color: rgba(var(--lpink), 0.5);
-    height: 2rem;
+@media screen and (min-width: 768px) {
+  form#formAdmin {
     width: 80%;
-    margin-bottom: 2rem;
-  } */
- /* } */
+    border-radius: 50rem;
+    padding: 4rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  form#formAdmin {
+    width: 50%;
+    border-radius: 20rem;
+    height:32rem;
+  }
+}
