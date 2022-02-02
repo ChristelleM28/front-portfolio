@@ -1,15 +1,13 @@
 /*rectangle de page Home*/
 .rectangleHome {
-  width: 30%;
-  background-color: rgba(var(--lpink), 0.9);
-  margin: 100px auto 100px auto;
+  width: 80%;
+  background-color: rgba(var(--lpink), 0.8);
+  margin: 10vh auto;
   border-radius: 15px;
   }
 
-
 /* ampoule */
 .light {
-  /* background-color: rgba(var(--lpink), 0.9); */
   border-radius: 40px 40px 0 0;
   width: 50px;
   height: 11px;
@@ -44,9 +42,20 @@ h2 {
   width:100%; 
   border-radius: 0 0 15px 15px;
   text-decoration: none;
+  font-size:1.4rem;
 }
 .span{
   text-align: center;
 }
 
+@media screen and (min-width: 768px) {
+  .rectangleHome {
+    width: 50%;
+  }
+}
 
+@media screen and (min-width: 1024px) {
+  .rectangleHome {
+    width: 30%;
+  }
+}

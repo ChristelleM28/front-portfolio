@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../Button/Button";
+import DashboardButton from "../DashboardButton/DashboardButton";
 import "../Admin/Admin.css";
 
 function DashboardImage() {
@@ -10,38 +10,19 @@ function DashboardImage() {
         <div className="containerAdmin">
           <div>
             <label htmlFor="selectFile" className="selectFile">
-              <input
-                type="text"
-                id="selectFile"
-                placeholder="Select File"
-                // value={email}
-                // onChange={handleEmailChange}
-                // required
-              />
+              <input type="text" id="selectFile" placeholder="Select File" />
             </label>
           </div>
 
           <div>
             <label htmlFor="imageName" className="imageName">
-              <input
-                type="text"
-                id="imageName"
-                placeholder="Image Name"
-                // value={password}
-                // onChange={password}
-              />
+              <input type="text" id="imageName" placeholder="Image Name" />
             </label>
           </div>
 
           <div>
             <label htmlFor="imageUrl" className="imageUrl">
-              <input
-                type="url"
-                id="imageUrl"
-                placeholder="Image Url"
-                // value={password}
-                // onChange={password}
-              />
+              <input type="url" id="imageUrl" placeholder="Image Url" />
             </label>
           </div>
 
@@ -51,13 +32,14 @@ function DashboardImage() {
                 type="text"
                 id="imageDescription"
                 placeholder="Image Description"
-                // value={message}
-                // onChange={handleMessageChange}
               />
             </label>
           </div>
-
-          <Button /> <Button /> <Button />
+          <div className="containerDashboardButton">
+            <DashboardButton className="add" buttonName="Add" />
+            <DashboardButton className="modify" buttonName="Modify" />
+            <DashboardButton className="delete" buttonName="Delete" />
+          </div>
         </div>
       </form>
     </div>

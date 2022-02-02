@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link, Navigate } from "react-router-dom";
 import "./Home.css";
-import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 
+
 function Home() {
-  
+  const [followLink, setFollowLink] = useState(false);
   const handleClick = () => {
-    <Link to="/ProjectList"></Link>;
+    setFollowLink(!followLink);
   };
 
   return (
@@ -21,8 +22,9 @@ function Home() {
           <h2> Christelle Marquier</h2>
         </div>
 
-        <Button title="See more" more="Let's go!" onClick={() => handleClick} />
-
+        <Button title="See more" more="Let's go!" onClick={handleClick} />
+        {followLink ? <Navigate to="/ProjectList" /> : ""}
+         
         <div>
           <Link to="/about" className="about">
             About me

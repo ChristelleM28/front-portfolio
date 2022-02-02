@@ -9,41 +9,21 @@ function Contact() {
       <form>
         <h2 className="contactMe">CONTACT ME</h2>
         <div className="containerForm">
-          
           <div>
             <label htmlFor="firstName" className="firstName">
-              <input
-                type="texte"
-                id="firstName"
-                placeholder="Name"
-                // value={firstName}
-                // onChange={handleFirstNameChange}
-              />
+              <input type="texte" id="firstName" placeholder="Name" />
             </label>
           </div>
 
           <div>
             <label htmlFor="email" className="email">
-              <input
-                type="email"
-                id="email"
-                placeholder="Email address"
-                // value={email}
-                // onChange={handleEmailChange}
-                // required
-              />
+              <input type="email" id="email" placeholder="Email address" />
             </label>
           </div>
 
           <div>
             <label htmlFor="message" className="message">
-              <textarea
-                type="message"
-                id="message"
-                placeholder="Message"
-                // value={message}
-                // onChange={handleMessageChange}
-              />
+              <textarea type="message" id="message" placeholder="Message" />
             </label>
           </div>
 

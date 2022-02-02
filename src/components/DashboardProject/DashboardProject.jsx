@@ -1,6 +1,6 @@
 import React from "react";
-import Button from "../Button/Button";
 import "../Admin/Admin.css";
+import DashboardButton from "../DashboardButton/DashboardButton";
 
 
 function DashboardProject() {
@@ -9,69 +9,40 @@ function DashboardProject() {
       <form id="formAdmin">
         <h2 className="admin"> DASHBOARD PROJECT </h2>
         <div className="containerAdmin">
-
           <div>
             <label htmlFor="selectFile" className="selectFile">
-              <input
-                type="text"
-                id="selectFile"
-                placeholder="Select File"
-                // value={email}
-                // onChange={handleEmailChange}
-                // required
-              />
+              <input type="text" id="selectFile" placeholder="Select File" />
             </label>
           </div>
-
           <div>
             <label htmlFor="projectName" className="projectName">
-              <input
-                type="text"
-                id="projectName"
-                placeholder="Project Name"
-                // value={password}
-                // onChange={password}
-              />
+              <input type="text" id="projectName" placeholder="Project Name" />
             </label>
           </div>
-
           <div>
             <label htmlFor="projectDate" className="projectDate">
-              <input
-                type="date"
-                id="projectDate"
-                placeholder="projectDate"
-                // value={password}
-                // onChange={password}
-              />
+              <input type="date" id="projectDate" placeholder="projectDate" />
             </label>
           </div>
-
           <div>
             <label htmlFor="dateCreated" className="dateCreated">
-              <input
-                type="date"
-                id="dateCreated"
-                placeholder="Date Created"
-                // value={password}
-                // onChange={password}
-              />
+              <input type="date" id="dateCreated" placeholder="Date Created" />
             </label>
           </div>
-
           <div>
             <label htmlFor="projectDescription" className="projectDescription">
               <textarea
                 type="text"
                 id="projectDescription"
                 placeholder="Project Description"
-                // value={message}
-                // onChange={handleMessageChange}
               />
             </label>
           </div>
-
-        <Button id="o" titre="Add"/> <Button titre="Modify" /> <Button titre="Delete"/>
+          <div className="containerDashboardButton">
+            <DashboardButton className="add" buttonName="Add" />
+            <DashboardButton className="modify" buttonName="Modify" />
+            <DashboardButton className="delete" buttonName="Delete" />
+          </div>
         </div>
       </form>
     </div>

@@ -4,9 +4,9 @@
 
 /*rectangle de page About*/
 .rectangleAbout {
-  width: 50%;
-  background-color: rgba(var(--lpink), 0.9);
-  margin: 100px auto 140px auto;
+  width: 80%;
+  background-color: rgba(var(--lpink), 0.8);
+  margin: 5vh auto 14vh auto;
   border-radius: 15px;
 }
 
@@ -21,4 +21,16 @@ h2 {
 
 p {
   margin: 3rem auto 3rem auto;
+}
+
+@media screen and (min-width: 768px) {
+  .rectangleHome {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .rectangleHome {
+    width: 30%;
+  }
 }
