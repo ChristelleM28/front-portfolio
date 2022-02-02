@@ -33,9 +33,9 @@ textarea::placeholder {
 }
 
 @media screen and (min-width: 768px) {
-  .rectangleHome {
-    width: 70%;
-  }
+  /* .rectangleHome {
+   
+  } */
 
   form {
     padding: 2rem;

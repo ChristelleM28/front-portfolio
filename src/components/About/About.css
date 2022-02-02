@@ -24,13 +24,13 @@ p {
 }
 
 @media screen and (min-width: 768px) {
-  .rectangleHome {
-    width: 50%;
+  .rectangleAbout {
+    width: 70%;
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .rectangleHome {
-    width: 30%;
+  .rectangleAbout {
+    width: 80%;
   }
 }
