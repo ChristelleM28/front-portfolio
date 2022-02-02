@@ -6,14 +6,14 @@ import "./ProjectList.css";
 import Footer from "../Footer/Footer";
 
 function ProjectList() {
-// Je créé ma variable pour stocker mes projets
-  const [projectList, setProjectList] = useState([]);
+// // Je créé ma variable pour stocker mes projets
+//   const [projectList, setProjectList] = useState([]);
 
-  // je fais mon appel à l'api
-useEffect(() => {
+//   // je fais mon appel à l'api
+// useEffect(() => {
   
-  axios.get()
-}, []);
+//   axios.get()
+// }, []);
 
 
   const datas = [
