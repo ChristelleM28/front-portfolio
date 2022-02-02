@@ -1,0 +1,45 @@
+/* détermination variables couleurs type rgb pour gérer opacité */
+:root {
+  --blueg: 109, 138, 141;
+  --green: 101, 140, 129;
+  --black: 0, 13, 12;
+  --lpink: 245, 235, 235;
+  --pink: 242, 203, 194;
+  --darkslategray: 47, 79, 79;
+}
+
+body {
+  margin: 0;
+  background: url(/public/assets/fond-portfolio.png) no-repeat center center fixed;
+  font-family: Georgia, serif;
+  padding: 0;
+  background-size: cover;
+  color: rgb(var(--blueg));
+    text-align: center;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 50px auto 50px auto;
+}
+
+h2 {
+  font-size: 1.5em;
+  text-align: center;
+  color: rgb(var(--blueg));
+}
+
+h3 {
+  font-size: 1.5em;
+  color:#ffff;
+}
+
+p{
+  font-size:1.5rem;
+}
+
+@media only screen {
+  .App {
+    bottom: 0;
+  }
+}

@@ -1,0 +1,55 @@
+.projectListContainer {
+  margin: 3rem auto 1rem auto;
+  background-color: rgba(var(--lpink), 0.5);
+  padding: 1rem;
+  border-radius: 15px;
+}
+
+.carousel {
+  position: relative;
+}
+
+.contentCarousel {
+  width: 90%;
+  margin: auto;
+}
+
+.carousel .slider {
+  margin: auto;
+  width: 100%;
+}
+
+.carousel .overlay {
+  width: 80%;
+  position: absolute;
+  top: 60%;
+  transform: translateY(-30%);
+  right: 2%;
+  padding: 0.4rem 1.5rem;
+  text-align: left;
+  background: hsla(0, 0%, 0%, 0.5);
+  color: #ffff;
+}
+
+.overlay {
+  box-shadow: 5px;
+  border-radius: 15px;
+  padding: 5px;
+  margin-top: 100px;
+}
+
+/* pour les miniatures */
+.carousel .thumbs {
+  display: flex;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 1024px) {
+  .projectListContainer {
+    margin: 3rem;
+    padding: 3rem;
+    border-radius: 15px;
+  }
+ }
+
+

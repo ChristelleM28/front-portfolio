@@ -1,0 +1,36 @@
+.container {
+  margin: 0;
+}
+
+/*rectangle de page About*/
+.rectangleAbout {
+  width: 80%;
+  background-color: rgba(var(--lpink), 0.8);
+  margin: 5vh auto 14vh auto;
+  border-radius: 15px;
+}
+
+.aboutMe {
+  margin: 10%;
+  padding: 80px 30px 0 30px;
+  text-align: left;
+}
+h2 {
+  color: rgb(var(--blueg));
+}
+
+p {
+  margin: 3rem auto 3rem auto;
+}
+
+@media screen and (min-width: 768px) {
+  .rectangleAbout {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .rectangleAbout {
+    width: 80%;
+  }
+}

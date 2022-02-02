@@ -1,0 +1,49 @@
+.footerMenu {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.footerButton {
+  background-color: rgba(var(--lpink), 0.7);
+  color: rgba(var(--lpink), 0.9);
+  border-radius: 130px 130px 0 0;
+  width: 80px;
+  height: 10px;
+  margin: auto;
+  margin-top: 30px;
+  padding: 35px;
+   }
+
+   .footerButton.openMenu button, 
+   .footerButton.openMenu{
+display:none
+   }
+
+.footerButton:hover {
+  cursor: pointer;
+  transform: scale(1.5);
+}
+
+.buttonMenu {
+  font-family: inherit;
+  background-color: transparent;
+  color: rgba(var(--lpink), 0.9);
+  font-size: 30px;
+  border: none;
+  }
+
+.footerMenuContent nav{
+display:flex;
+justify-content: space-between;
+margin:auto;
+width: 30%;
+font-size: 1.6rem;
+padding:1rem
+}
+
+a {
+  text-decoration: none;
+  color: rgba(var(--lpink), 0.9);
+}

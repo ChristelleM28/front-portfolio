@@ -1,0 +1,61 @@
+/*rectangle de page Home*/
+.rectangleHome {
+  width: 80%;
+  background-color: rgba(var(--lpink), 0.8);
+  margin: 10vh auto;
+  border-radius: 15px;
+  }
+
+/* ampoule */
+.light {
+  border-radius: 40px 40px 0 0;
+  width: 50px;
+  height: 11px;
+  padding: 15px;
+  margin: auto;
+
+}
+.light img {
+  width: 60px;
+  height: 60px;
+  margin-top:-50px;
+}
+
+h2 {
+  padding-left:30px;
+  padding-right:30px;
+}
+
+/* partie Welcome */
+.welcome {
+  margin-top: 100px;
+}
+
+/* partie about me */
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(var(--blueg));
+  color: rgb(var(--lpink));
+  height: 50px;
+  width:100%; 
+  border-radius: 0 0 15px 15px;
+  text-decoration: none;
+  font-size:1.4rem;
+}
+.span{
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .rectangleHome {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .rectangleHome {
+    width: 40%;
+  }
+}
