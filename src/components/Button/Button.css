@@ -6,14 +6,13 @@ margin:1rem;
 
 .roundButton {
   font-size: 26px;
-  font-family: Cambria, Cochin, Georgia, serif;
+  font-family: Georgia, serif;
   background: rgb(var(--blueg));
   color: rgb(var(--lpink));
   border-radius: 80px;
   border: none;
   width: 110px;
   height: 110px;
-  /* margin: 100px auto 80px auto; */
   transition: all 0.15s linear 0s;
   text-decoration: none;
   cursor: pointer;

@@ -1,13 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
+import { Navigate } from "react-router-dom";
 import "./Admin.css";
 import Button from "../Button/Button";
-// import Footer from "../Footer/Footer";
+import DashboardProject from '../DashboardProject/DashboardProject';
 
 
 function Admin() {
+  const [followLink, setFollowLink] = useState(false);
+  const handleClick = () => {
+    setFollowLink(!followLink);
+  };
+
   return (
-  
-    <div>
+      <div>
       <form id="formAdmin">
         <h2 className="admin"> ADMIN </h2>
         <div className="containerAdmin">
@@ -18,9 +23,6 @@ function Admin() {
                 type="email"
                 id="email"
                 placeholder="@"
-                // value={email}
-                // onChange={handleEmailChange}
-                // required
                 />
             </label>
           </div>
@@ -31,16 +33,14 @@ function Admin() {
                 type="password"
                 id="password"
                 placeholder="Password"
-                // value={password}
-                // onChange={password}
               />
             </label>
           </div>
 
-          <Button titre="Send" plus="Let's go!"/>
+          <Button title="Send" more="Let's go!" onCLick={handleClick} />
+        {followLink ? <Navigate to="/Home" /> : ""}
         </div>
       </form>
-      {/* <Footer/> */}
       </div>
 
   );

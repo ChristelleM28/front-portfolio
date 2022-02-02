@@ -1,10 +1,71 @@
 .projectListContainer {
-  margin: 200px;
+  margin: 3rem auto 1rem auto;
   background-color: rgba(var(--lpink), 0.5);
-  padding: 3rem;
+  padding: 1rem;
   border-radius: 15px;
 }
 
+.carousel {
+  position: relative;
+}
+
+/* .contentCarousel {
+  width: 90%;
+  margin: auto;
+} */
+
+.carousel .slider {
+  margin: auto;
+  width: 100%;
+}
+
+.carousel .overlay {
+  width: 80%;
+  position: absolute;
+  top: 60%;
+  transform: translateY(-30%);
+  right: 2%;
+  padding: 0.4rem 1.5rem;
+  text-align: left;
+  background: hsla(0, 0%, 0%, 0.5);
+  color: #ffff;
+}
+
+.overlay {
+  box-shadow: 5px;
+  border-radius: 15px;
+  padding: 5px;
+  margin-top: 100px;
+}
+
+/* pour les miniatures */
+.carousel .thumbs {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.carousel .thumb {
+  margin: 0 1rem;
+}
+
+
+@media screen and (min-width: 768px) {
+  
+}
+
+@media screen and (min-width: 1024px) {
+  .projectListContainer {
+    margin: 200px;
+    background-color: rgba(var(--lpink), 0.5);
+    padding: 3rem;
+    border-radius: 15px;
+  }
+}
+/* 
+  
 .projectListTitle {
   color: #ffff;
 }
@@ -37,7 +98,7 @@
   padding: 0.4rem 1.5rem;
   text-align: left;
   background: hsla(0, 0%, 0%, 0.5);
-  color:#ffff;
+  color: #ffff;
 }
 
 .overlay {
@@ -48,7 +109,7 @@
 }
 
 /* pour les miniatures */
-.carousel .thumbs {
+/* .carousel .thumbs {
   display: flex;
   justify-content: center;
   margin: 0;
@@ -60,10 +121,7 @@
   margin: 0 10px;
 }
 
-/* .carousel .control-arrow, */
-/* .carousel.carousel-slider .control-arrow 
-
-  {transition: none;
-    */
 .carousel-slider .control-arrow {
-  transition:none}
+  transition: none;
+} */
+

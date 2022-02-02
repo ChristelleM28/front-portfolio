@@ -1,0 +1,25 @@
+.dashboardButton {
+  font-size: 26px;
+  font-family: Georgia, serif;
+  background: rgb(var(--blueg));
+  color: rgb(var(--lpink));
+  border-radius: 80px;
+  border: none;
+  width: 110px;
+  height: 110px;
+  transition: all 0.15s linear 0s;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.dashboardButton.add {
+  background-color: rgb(var(--darkslategray));
+}
+
+.dashboardButton.modify{
+  background-color:rgb(var(--green));
+}
+
+.dashboardButton.delete {
+  background-color: rgb(var(--black));
+  }
