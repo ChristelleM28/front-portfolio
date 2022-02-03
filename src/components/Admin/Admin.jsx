@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import { Navigate } from "react-router-dom";
 import "./Admin.css";
 import Button from "../Button/Button";
-import DashboardProject from '../DashboardProject/DashboardProject';
 
 
 function Admin() {

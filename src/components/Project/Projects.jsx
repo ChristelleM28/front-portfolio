@@ -1,20 +1,27 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
-import "./ProjectList.css";
+import "./Projects.css";
 import Footer from "../Footer/Footer";
 
-function ProjectList() {
-// // Je créé ma variable pour stocker mes projets
-//   const [projectList, setProjectList] = useState([]);
+// je récupère ma variable d'environnement pour accéder à mon serveur via axios
+const API_URL = process.env.REACT_APP_API_PORTFOLIO_URL;
 
-//   // je fais mon appel à l'api
-// useEffect(() => {
-  
-//   axios.get()
-// }, []);
+function Projects() {
+  // // Je créé ma variable pour stocker mes projets
+  const [projects, setProjects] = useState([]);
 
+  //   // je fais mon appel à l'api
+  useEffect(() => {
+    axios
+      .get(`${API_URL}/api/projects/`)
+      .then(({ data }) => {
+        // console.log(data);
+        setProjects(data);
+      })
+      .catch((err) => console.error(err.message));
+  }, []);
 
   const datas = [
     {
@@ -91,8 +98,10 @@ function ProjectList() {
 
   return (
     <div className="projectListContainer">
-      <div >
-        <h3 classeName="projectListTitle">Voici un aperçu des projets que j'ai réalisé</h3>
+      <div>
+        <h3 className="projectListTitle">
+          Voici un aperçu des projets que j'ai réalisé
+        </h3>
       </div>
       <div className="contentCarousel">
         <Carousel
@@ -116,9 +125,9 @@ function ProjectList() {
           ))}
         </Carousel>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
 
-export default ProjectList;
+export default Projects;

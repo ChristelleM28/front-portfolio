@@ -1,8 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
-import ProjectList from "./components/ProjectList/ProjectList";
-import Project from "./components/Project/Project";
+import Projects from "./components/Project/Projects";
 import Contact from "./components/Contact/Contact";
 import Admin from "./components/Admin/Admin";
 import DashboardProject from "./components/DashboardProject/DashboardProject";
@@ -16,8 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/About" element={<About />}></Route>
-        <Route path="/ProjectList" element={<ProjectList />}></Route>
-        <Route path="/Project" element={<Project />}></Route>
+        <Route path="/Projects" element={<Projects />}></Route>
         <Route path="/Contact" element={<Contact />}></Route>
         <Route path="/Admin" element={<Admin />}></Route>
         <Route
