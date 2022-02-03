@@ -23,7 +23,7 @@ function Home() {
         </div>
 
         <Button title="See more" more="Let's go!" onClick={handleClick} />
-        {followLink ? <Navigate to="/ProjectList" /> : ""}
+        {followLink ? <Navigate to="/Projects" /> : ""}
          
         <div>
           <Link to="/about" className="about">

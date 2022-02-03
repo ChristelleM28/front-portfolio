@@ -21,21 +21,22 @@
 
 .carousel .overlay {
   width: 80%;
-  position: absolute;
-  top: 60%;
-  transform: translateY(-30%);
+  /* position: absolute;
+  top: 40%;
+  transform: translateY(-50%); */
   right: 2%;
   padding: 0.4rem 1.5rem;
   text-align: left;
   background: hsla(0, 0%, 0%, 0.5);
   color: #ffff;
+  overflow: scroll;
+  border-radius: 15px;
 }
 
-.overlay {
-  box-shadow: 5px;
-  border-radius: 15px;
-  padding: 5px;
-  margin-top: 100px;
+
+.overlay-description{
+color: red;
+height: 50px;
 }
 
 /* pour les miniatures */
