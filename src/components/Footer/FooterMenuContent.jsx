@@ -9,7 +9,7 @@ function FooterMenuContent() {
         <Link to="/about" className="linkAbout">
           About
         </Link>
-        <Link to="/projectList" className="linkProjectList">
+        <Link to="/projects" className="linkProjectList">
           Project
         </Link>
         <Link to="/contact" className="linkContact">
