@@ -19,23 +19,27 @@
   width: 100%;
 }
 
+li .slide {
+  position: relative;
+}
+
 .carousel .overlay {
   width: 80%;
-  position: absolute;
-  top: 60%;
-  transform: translateY(-30%);
+  top: 40%;
+  transform: translateY(-40%);
   right: 2%;
   padding: 0.4rem 1.5rem;
   text-align: left;
   background: hsla(0, 0%, 0%, 0.5);
   color: #ffff;
+  border-radius: 15px;
+  margin-left:auto;
+  margin-right: 1rem;
 }
 
-.overlay {
-  box-shadow: 5px;
-  border-radius: 15px;
-  padding: 5px;
-  margin-top: 100px;
+.overlay-description {
+  color: red;
+  height: 50px;
 }
 
 /* pour les miniatures */
@@ -50,6 +54,8 @@
     padding: 3rem;
     border-radius: 15px;
   }
- }
 
-
+  .carousel .overlay {
+    margin-right: 3.5rem;
+  }
+}

@@ -6,7 +6,7 @@ import DashboardButton from "../DashboardButton/DashboardButton";
 function DashboardProject() {
   return (
     <div>
-      <form id="formAdmin">
+      <form id="formAdminProject">
         <h2 className="admin"> DASHBOARD PROJECT </h2>
         <div className="containerAdmin">
           <div>

@@ -5,7 +5,7 @@ import "../Admin/Admin.css";
 function DashboardImage() {
   return (
     <div>
-      <form id="formAdmin">
+      <form id="formAdminImage">
         <h2 className="admin"> DASHBOARD IMAGE </h2>
         <div className="containerAdmin">
           <div>

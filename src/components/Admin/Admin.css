@@ -2,7 +2,20 @@ form#formAdmin {
   width: 80%;
   border-radius: 20rem;
   background-color: rgba(var(--green), 0.8);
-  /* padding: 3rem; */
+  height: auto;
+}
+form#formAdminImage {
+  width: 80%;
+  border-radius: 20rem;
+  background-color: rgba(var(--green), 0.8);
+  height: 31rem;
+}
+
+form#formAdminProject {
+  width: 80%;
+  border-radius: 20rem;
+  background-color: rgba(var(--green), 0.8);
+  height: 36rem;
 }
 
 input {
@@ -10,11 +23,9 @@ input {
   height: 2rem;
   width: 80%;
   margin-bottom: 1.5rem;
-  overflow: none;
 }
 
 input::placeholder {
-  color: rgba(var(--lpink));
   font-size: 1.5em;
 }
 
@@ -28,12 +39,14 @@ input::placeholder {
     border-radius: 50rem;
     padding: 4rem;
   }
+  form {
+  }
 }
 
 @media screen and (min-width: 1024px) {
   form#formAdmin {
     width: 50%;
     border-radius: 20rem;
-    height:32rem;
+    height: 32rem;
   }
 }
