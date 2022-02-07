@@ -14,29 +14,22 @@ form {
 
 input {
   background-color: rgba(var(--lpink), 0.1);
-  color: rgba(var(--green), 0.9);
   height: 2rem;
   width: 80%;
   margin-bottom: 2rem;
+  border-color: transparent;
 }
 
 textarea {
   height: 10rem;
   background-color: rgba(var(--lpink), 0.5);
   width: 80%;
-  
   font-size: 1.5em;
+  border-color: transparent;
 }
 
-textarea::placeholder {
-  color: rgba(var(--green), 0.9);
-}
 
 @media screen and (min-width: 768px) {
-  /* .rectangleHome {
-   
-  } */
-
   form {
     padding: 2rem;
     width: 60%;
