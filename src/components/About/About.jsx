@@ -1,9 +1,12 @@
 import React from "react";
-import "./About.css";
 import Button from "../Button/Button";
 import Footer from "../Footer/Footer";
+import cv from "../../assets/cv.pdf";
+import "./About.css";
 
 function About() {
+const handleClick = (e) => { <img src={cv} alt="CV" ></img>};
+
   return (
     <div className="container">
       <div className="socialMedia">
@@ -44,7 +47,7 @@ function About() {
             doloribus sit nam voluptas.
 </p>
         </div>
-        <Button title="My CV" more="Let's go!"/>
+        <Button title="My CV" more="Let's go!" onClick={handleClick}/>
         </div>
       <Footer/>
     </div>

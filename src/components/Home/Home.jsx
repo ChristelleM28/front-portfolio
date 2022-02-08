@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
-import "./Home.css";
 import Button from "../Button/Button";
-
+import light from "../../assets/light.png";
+import "./Home.css";
 
 function Home() {
   const [followLink, setFollowLink] = useState(false);
@@ -14,7 +14,7 @@ function Home() {
     <div className="container">
       <div className="rectangleHome">
         <div className="light">
-          <img src="../assets/light.png" alt="light" />
+          <img src={light} alt="light" />
         </div>
         <div className="welcome">
           <h2> Welcome to my</h2>
@@ -24,7 +24,7 @@ function Home() {
 
         <Button title="See more" more="Let's go!" onClick={handleClick} />
         {followLink ? <Navigate to="/Projects" /> : ""}
-         
+
         <div>
           <Link to="/about" className="about">
             About me
