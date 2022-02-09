@@ -6,6 +6,7 @@ function FooterMenuContent() {
   return (
     <div className="footerMenuContent">
       <nav>
+        <Link to="/" className="home">Home</Link> 
         <Link to="/about" className="linkAbout">
           About
         </Link>
