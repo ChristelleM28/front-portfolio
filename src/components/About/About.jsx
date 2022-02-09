@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import Button from "../Button/Button";
 import Footer from "../Footer/Footer";
-import cv from "../../assets/cv.pdf";
+import ModalCv from "../Cv/ModalCv";
 import "./About.css";
 
 function About() {
   //j'initialise le state de mes évènements
   const [displayPdf, setDisplayPdf] = useState(false);
 
-// je définie l'évènement sur lequel fonctionne le clic
+  // je définie l'évènement sur lequel fonctionne le clic
   const handleClick = (e) => {
     setDisplayPdf(true);
   };
@@ -48,9 +48,8 @@ function About() {
           </p>
         </div>
         <Button title="My CV" more="Let's go!" onClick={handleClick} />
+        {displayPdf && <ModalCv onClick={() => setDisplayPdf(!displayPdf)} />}
       </div>
-      {/* je définie la condition d'affichage de mon pdf */}
-      {displayPdf ? <iframe src={cv} title="cv"></iframe> : ""}
       <Footer />
     </div>
   );
