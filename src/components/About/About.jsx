@@ -48,8 +48,9 @@ function About() {
           </p>
         </div>
         <Button title="My CV" more="Let's go!" onClick={handleClick} />
+        </div>
         {displayPdf && <ModalCv onClick={() => setDisplayPdf(!displayPdf)} />}
-      </div>
+      
       <Footer />
     </div>
   );

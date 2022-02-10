@@ -3,10 +3,10 @@ import cv from "../../assets/cv.pdf";
 
 function ModalCv({ onClick }) {
   return (
-    <div className="modalCv">
+    <div className="modalCvContainer">
       <button onClick={onClick}>X</button>
       <div classeName="iframeCv">
-        <iframe src={cv} title="cv"></iframe>
+        <iframe src={cv} title="cv" frameborder="0" height="100%" width="100%"></iframe>
       </div>
     </div>
   );
