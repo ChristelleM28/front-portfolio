@@ -36,7 +36,7 @@ function Admin() {
             </label>
           </div>
 
-          <Button title="Send" more="Let's go!" onCLick={handleClick} />
+          <Button title="Send" more="Let's go!" onClick={handleClick} />
         {followLink ? <Navigate to="/Home" /> : ""}
         </div>
       </form>

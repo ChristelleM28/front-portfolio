@@ -7,17 +7,21 @@ import "./Contact.css";
 const API_URL = process.env.REACT_APP_API_PORTFOLIO_URL;
 
 function Contact() {
-  const [data, setData] = useState("");
-const [firstName, setFirstName] = useState("")
-const [email, setEmail] = useState("");
-const [message, setMessage] = useState("");
-
+  const [firstName, setFirstName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleSubmit = (e) => {
+    e.preventDefault();
     axios
-      .post(`${API_URL}/api/contact/html`, { firstName, email, message }) 
-      .then((data) => {
-        setData(data);
+      .post(`${API_URL}/api/contact/html`, { firstName, email, message })
+      .then((res) => {
+        if (res.status === 200) {
+          console.log("alerte")
+          alert("Merci");
+        } else {
+          console.log(res);
+        }
       })
       .catch((err) => console.error(err.message));
   };
@@ -29,19 +33,37 @@ const [message, setMessage] = useState("");
         <div className="containerForm">
           <div>
             <label htmlFor="firstName" className="firstName">
-              <input type="texte" id="firstName" placeholder="Name" value="firstName" onChange="a compléter avec state"/>
+              <input
+                type="texte"
+                id="firstName"
+                placeholder="Name"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+              />
             </label>
           </div>
 
           <div>
             <label htmlFor="email" className="email">
-              <input type="email" id="email" placeholder="Email address" value="email" onChange=""/>
+              <input
+                type="email"
+                id="email"
+                placeholder="Email address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
             </label>
           </div>
 
           <div>
             <label htmlFor="message" className="message">
-              <textarea type="message" id="message" placeholder="Message" value="message" onChange=""/>
+              <textarea
+                type="message"
+                id="message"
+                placeholder="Message"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+              />
             </label>
           </div>
 
