@@ -1,10 +1,27 @@
-import React from "react";
+import React, {useState} from "react";
+import { Navigate } from "react-router-dom";
 import DashboardButton from "../DashboardButton/DashboardButton";
+import Button from "../Button/Button";
 import "../Admin/Admin.css";
 
 function DashboardImage() {
+
+  const [followLink, setFollowLink] = useState(false);
+  const handleClick = () => {
+    setFollowLink(!followLink);
+  };
+
+  const [disconnect, setDisconnect] = useState(false);
+  const handleDisconnect = () => {
+setDisconnect(!disconnect);
+  }
+  //dans le handlecClick ajouter le lien axios vers le back pour disconection
+
   return (
     <div>
+      <Button title="Disconnect" onClick={handleDisconnect} />
+      {disconnect ? <Navigate to="/admin"/> : ""}
+
       <form id="formAdmin">
         <h2 className="admin"> DASHBOARD IMAGE </h2>
         <div className="containerAdmin">
@@ -34,6 +51,10 @@ function DashboardImage() {
                 placeholder="Image Description"
               />
             </label>
+          </div>
+          <div> 
+            <Button title="Dashboard Project" more="OK!" onClick={handleClick} />
+            {followLink ? <Navigate to="/admin/dashboardProject"/> : ""}
           </div>
           <div className="containerDashboardButton">
             <DashboardButton className="add" buttonName="Add" />
