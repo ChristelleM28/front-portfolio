@@ -2,7 +2,6 @@ form#formAdmin {
   width: 80%;
   border-radius: 20rem;
   background-color: rgba(var(--green), 0.8);
-  /* padding: 3rem; */
 }
 
 input {
