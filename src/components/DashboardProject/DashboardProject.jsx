@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import axios from "axios";
-// import Select from "react-select";
+import Select from "react-select";
+import AsyncSelect from "react-select/async";
 import DashboardButton from "../DashboardButton/DashboardButton";
 import Button from "../Button/Button";
 import "../Admin/Admin.css";
@@ -24,7 +25,12 @@ function DashboardProject() {
   }, []);
 
   // je poste un nouveau projet
-  const [newProject, setNewProject] = useState({});
+  const [newProject, setNewProject] = useState({
+    project_name: "",
+    project_description: "",
+    projet_link: "",
+    project_date: "",
+  });
 
   const handleAddProject = async (e) => {
     e.preventDefault();
@@ -94,7 +100,22 @@ function DashboardProject() {
   //dans le handlecClick ajouter le lien axios vers le back pour disconection
 
   //définition des options pour utilisation de react-select
-  // const options = [];
+  const [inputValue, setValue] = useState("Select file");
+  const [selectedValue, setSelectedValue] = useState("");
+  // je gère mon changement
+  const handleInputChange = (value) => {
+    setValue(value);
+  };
+  // je gère ma sélection
+  const handleChange = (value) => {
+    setSelectedValue(value);
+  };
+  // je charge mon option avec l'appel à l'API
+  const loadOptions = (inputValue) => {
+    return fetch(`${API_URL}/api/projects/${inputValue}`).then((res) => res.json());
+    //`http://jsonplaceholder.typicode.com/posts?userId=${inputValue}`).then(res => res.json());
+  };
+  console.log(inputValue);
 
   return (
     <div>
@@ -110,9 +131,25 @@ function DashboardProject() {
       <form id="formAdmin">
         <h2 className="admin"> DASHBOARD PROJECT </h2>
         <div className="containerAdmin">
+
           <div>
             <label htmlFor="selectFile" className="selectFile">
-              <input type="text" id="selectFile" placeholder="Select File" />
+               <pre></pre>
+               <AsyncSelect
+                cacheOptions
+                defaultOptions
+                value={selectedValue}
+                getOptionLabel={(e) => e.project_name}
+                getOptionValue={(e) => e.id}
+                loadOptions={loadOptions}
+                onInputChange={handleInputChange}
+                onChange={handleChange}
+                />
+                
+              <pre>
+                {/* Selected Value: {JSON.stringify(selectedValue || {}, null, 2)} */}
+              </pre>
+              
             </label>
           </div>
 
@@ -123,7 +160,8 @@ function DashboardProject() {
                 id="projectName"
                 placeholder="Project Name"
                 //exemple si on a plusieurs states pour alléger le code
-                value={newProject.project_name}
+                // value={newProject.project_name}
+                value={JSON.stringify(selectedValue.project_name, {}, 2)}
                 onChange={(e) =>
                   setNewProject((prevState) => ({
                     ...prevState,
@@ -142,7 +180,8 @@ function DashboardProject() {
                 id="projetLink"
                 placeholder="Project Link"
                 //exemple si on a plusieurs states pour alléger le code
-                value={newProject.projet_link}
+                // value={newProject.projet_link}
+                value={JSON.stringify(selectedValue.projet_link, {}, 2)}
                 onChange={(e) =>
                   setNewProject((prevState) => ({
                     ...prevState,
@@ -159,7 +198,8 @@ function DashboardProject() {
                 type="date"
                 id="projectDate"
                 placeholder="projectDate"
-                value={newProject.project_date}
+                // value={newProject.project_date}
+                value={JSON.stringify(selectedValue.project_date, {}, 2)}
                 onChange={(e) =>
                   setNewProject((prevState) => ({
                     ...prevState,
@@ -167,13 +207,13 @@ function DashboardProject() {
                   }))
                 }
               />
-              {/* <select option={}></select> */}
             </label>
           </div>
 
           <div>
             <label htmlFor="dateCreated" className="dateCreated">
-              <input type="date" id="dateCreated" placeholder="Date Created" />
+              <input type="date" id="dateCreated" placeholder="Date Created" 
+                 value={JSON.stringify(selectedValue.datecreated, {}, 2)}/>
             </label>
           </div>
 
@@ -183,7 +223,8 @@ function DashboardProject() {
                 type="text"
                 id="projectDescription"
                 placeholder="Project Description"
-                value={newProject.project_description}
+                // value={newProject.project_description}
+                value={JSON.stringify(selectedValue.project_description, {}, 2)}
                 onChange={(e) =>
                   setNewProject((prevState) => ({
                     ...prevState,
