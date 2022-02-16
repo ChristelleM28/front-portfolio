@@ -24,7 +24,7 @@ function Admin() {
         password,
       },
       {withCredentials: true,
-        });
+        }); 
 
       if(response.status === 200){
         alert("You're Login");
