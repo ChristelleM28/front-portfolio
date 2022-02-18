@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import axios from "axios";
-import Select from "react-select";
 import AsyncSelect from "react-select/async";
 import DashboardButton from "../DashboardButton/DashboardButton";
 import Button from "../Button/Button";
@@ -10,9 +9,29 @@ import "../Admin/Admin.css";
 const API_URL = process.env.REACT_APP_API_PORTFOLIO_URL;
 
 function DashboardProject() {
+    //je récupère mes projects
   const [projects, setProjects] = useState([]);
 
-  //je récupère mes projects
+    //définition des options pour utilisation de react-select
+    const [inputValue, setValue] = useState("Select file");
+    const [selectedValue, setSelectedValue] = useState("");
+    // je gère mon changement
+    const handleInputChange = (value) => {
+      setValue(value);
+    };
+    // je gère ma sélection
+    const handleChange = (value) => {
+      setSelectedValue(value);
+    };
+    // je charge mon option avec l'appel à l'API
+    const loadOptions = (inputValue) => {
+      return fetch(`${API_URL}/api/projects/${inputValue}`).then((res) =>
+        res.json()
+      );
+      //`http://jsonplaceholder.typicode.com/posts?userId=${inputValue}`).then(res => res.json());
+    };
+    console.log(inputValue);
+
   useEffect(() => {
     (async () => {
       axios
@@ -29,7 +48,7 @@ function DashboardProject() {
     project_name: "",
     project_description: "",
     projet_link: "",
-    project_date: "",
+    project_date: Date.parse(""),
   });
 
   const handleAddProject = async (e) => {
@@ -65,23 +84,33 @@ function DashboardProject() {
   const handleModifyProject = async (e, id) => {
     e.preventDefault();
 
-    await axios.put(`${API_URL}/api/projects/${id}`).then((response) => {
+    await axios
+    .put(`${API_URL}/api/projects/${selectedValue.id}`)
+    .then((response) => {
       if (response.status === 200) {
+        alert("Project modified succesfully");
         // je mets à jour la liste des projects
-        setProjects.filter((projects) => projects.id !== id);
-      }
+        setProjects.filter((projects) => projects.id !== selectedValue.id);
+      } else {
+        alert("Error");
+        }
     });
   };
 
   // je supprime un  projet en fonction de son id
-  const handleDeleteProject = async (e, id) => {
+   const handleDeleteProject = async (e, id) => {
     e.preventDefault();
 
-    await axios.delete(`${API_URL}/api/projects/${id}`).then((response) => {
+    await axios
+    .delete(`${API_URL}/api/projects/${selectedValue.id}`)
+    .then((response) => {
       if (response.status === 204) {
-        // je mets à jour la liste de mes projets
-        setProjects.filter((projects) => projects.id !== id);
-      }
+        alert("Project deleted");
+        // je mets à jour la liste des projets
+        setProjects.filter((projects) => projects.id !== selectedValue.id);
+      } else {
+        alert("Error");
+        }
     });
   };
 
@@ -99,23 +128,7 @@ function DashboardProject() {
 
   //dans le handlecClick ajouter le lien axios vers le back pour disconection
 
-  //définition des options pour utilisation de react-select
-  const [inputValue, setValue] = useState("Select file");
-  const [selectedValue, setSelectedValue] = useState("");
-  // je gère mon changement
-  const handleInputChange = (value) => {
-    setValue(value);
-  };
-  // je gère ma sélection
-  const handleChange = (value) => {
-    setSelectedValue(value);
-  };
-  // je charge mon option avec l'appel à l'API
-  const loadOptions = (inputValue) => {
-    return fetch(`${API_URL}/api/projects/${inputValue}`).then((res) => res.json());
-    //`http://jsonplaceholder.typicode.com/posts?userId=${inputValue}`).then(res => res.json());
-  };
-  console.log(inputValue);
+
 
   return (
     <div>
@@ -131,11 +144,10 @@ function DashboardProject() {
       <form id="formAdmin">
         <h2 className="admin"> DASHBOARD PROJECT </h2>
         <div className="containerAdmin">
-
           <div>
             <label htmlFor="selectFile" className="selectFile">
-               <pre></pre>
-               <AsyncSelect
+              <pre></pre>
+              <AsyncSelect
                 cacheOptions
                 defaultOptions
                 value={selectedValue}
@@ -144,12 +156,11 @@ function DashboardProject() {
                 loadOptions={loadOptions}
                 onInputChange={handleInputChange}
                 onChange={handleChange}
-                />
-                
+              />
+
               <pre>
                 {/* Selected Value: {JSON.stringify(selectedValue || {}, null, 2)} */}
               </pre>
-              
             </label>
           </div>
 
@@ -212,8 +223,12 @@ function DashboardProject() {
 
           <div>
             <label htmlFor="dateCreated" className="dateCreated">
-              <input type="date" id="dateCreated" placeholder="Date Created" 
-                 value={JSON.stringify(selectedValue.datecreated, {}, 2)}/>
+              <input
+                type="date"
+                id="dateCreated"
+                placeholder="Date Created"
+                value={JSON.stringify(selectedValue.datecreated, {}, 2)}
+              />
             </label>
           </div>
 
