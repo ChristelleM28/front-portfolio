@@ -9,28 +9,32 @@ import "../Admin/Admin.css";
 const API_URL = process.env.REACT_APP_API_PORTFOLIO_URL;
 
 function DashboardProject() {
-    //je récupère mes projects
-  const [projects, setProjects] = useState([]);
+  //je récupère mes projects
+  const [projects, setProjects] = useState("");
 
-    //définition des options pour utilisation de react-select
-    const [inputValue, setValue] = useState("Select file");
-    const [selectedValue, setSelectedValue] = useState("");
-    // je gère mon changement
-    const handleInputChange = (value) => {
-      setValue(value);
-    };
-    // je gère ma sélection
-    const handleChange = (value) => {
-      setSelectedValue(value);
-    };
-    // je charge mon option avec l'appel à l'API
-    const loadOptions = (inputValue) => {
-      return fetch(`${API_URL}/api/projects/${inputValue}`).then((res) =>
-        res.json()
-      );
-      //`http://jsonplaceholder.typicode.com/posts?userId=${inputValue}`).then(res => res.json());
-    };
-    console.log(inputValue);
+  // je définis mon state de modification
+  const [modifyProject, setModifyProject] = useState(false);
+
+  //définition des options pour utilisation de react-select
+  const [inputValue, setValue] = useState("Select file");
+  const [selectedValue, setSelectedValue] = useState("");
+  // je gère mon changement
+  const handleInputChange = (value) => {
+    setValue(value);
+  };
+  // je gère ma sélection
+  const handleChange = (value) => {
+    setSelectedValue(value);
+    setModifyProject(true);
+  };
+  // je charge mon option avec l'appel à l'API
+  const loadOptions = (inputValue) => {
+    return fetch(`${API_URL}/api/projects/${inputValue}`).then((res) =>
+      res.json()
+    );
+  };
+  //`http://jsonplaceholder.typicode.com/posts?userId=${inputValue}`).then(res => res.json());
+  // console.log(inputValue);
 
   useEffect(() => {
     (async () => {
@@ -46,9 +50,9 @@ function DashboardProject() {
   // je poste un nouveau projet
   const [newProject, setNewProject] = useState({
     project_name: "",
-    project_description: "",
     projet_link: "",
-    project_date: Date.parse(""),
+    project_date: "",
+    project_description: "",
   });
 
   const handleAddProject = async (e) => {
@@ -85,33 +89,49 @@ function DashboardProject() {
     e.preventDefault();
 
     await axios
-    .put(`${API_URL}/api/projects/${selectedValue.id}`)
-    .then((response) => {
-      if (response.status === 200) {
-        alert("Project modified succesfully");
-        // je mets à jour la liste des projects
-        setProjects.filter((projects) => projects.id !== selectedValue.id);
-      } else {
-        alert("Error");
+      .put(`${API_URL}/api/projects/${selectedValue.id}`, selectedValue)
+      .then((response) => {
+        if (response.status === 200) {
+          alert("Project modified succesfully");
+          
+          // je mets à jour la liste des projects
+          setProjects.filter((projects) => projects.id !== selectedValue.id);
+            } else {
+          alert("Error");
         }
-    });
+      });
+  };
+
+  //je conditionne mon changement
+  const modify = (e) => {
+    if (modifyProject === false) {
+      setNewProject((prevState) => ({
+        ...prevState,
+        [e.target.name]: e.target.value,
+      }));
+    } else {
+      setSelectedValue((prevState) => ({
+        ...prevState,
+        [e.target.name]: e.target.value,
+      }));
+    }
   };
 
   // je supprime un  projet en fonction de son id
-   const handleDeleteProject = async (e, id) => {
+  const handleDeleteProject = async (e, id) => {
     e.preventDefault();
 
     await axios
-    .delete(`${API_URL}/api/projects/${selectedValue.id}`)
-    .then((response) => {
-      if (response.status === 204) {
-        alert("Project deleted");
-        // je mets à jour la liste des projets
-        setProjects.filter((projects) => projects.id !== selectedValue.id);
-      } else {
-        alert("Error");
+      .delete(`${API_URL}/api/projects/${selectedValue.id}`)
+      .then((response) => {
+        if (response.status === 204) {
+          alert("Project deleted");
+          // je mets à jour la liste des projets
+          setProjects.filter((projects) => projects.id !== selectedValue.id);
+        } else {
+          alert("Error");
         }
-    });
+      });
   };
 
   //lien pour aller vers le dashboardImage
@@ -127,8 +147,6 @@ function DashboardProject() {
   };
 
   //dans le handlecClick ajouter le lien axios vers le back pour disconection
-
-
 
   return (
     <div>
@@ -158,9 +176,7 @@ function DashboardProject() {
                 onChange={handleChange}
               />
 
-              <pre>
-                {/* Selected Value: {JSON.stringify(selectedValue || {}, null, 2)} */}
-              </pre>
+              <pre></pre>
             </label>
           </div>
 
@@ -169,16 +185,12 @@ function DashboardProject() {
               <input
                 type="text"
                 id="projectName"
+                name="project_name"
                 placeholder="Project Name"
                 //exemple si on a plusieurs states pour alléger le code
                 // value={newProject.project_name}
-                value={JSON.stringify(selectedValue.project_name, {}, 2)}
-                onChange={(e) =>
-                  setNewProject((prevState) => ({
-                    ...prevState,
-                    project_name: e.target.value,
-                  }))
-                }
+                value={selectedValue.project_name}
+                onChange={modify}
               />
             </label>
             {/*mapper sur le tableau projet et retourner une balise "option" dans laquelle tu affiches le nom du projet */}
@@ -189,16 +201,10 @@ function DashboardProject() {
               <input
                 type="text"
                 id="projetLink"
+                name="projet_link"
                 placeholder="Project Link"
-                //exemple si on a plusieurs states pour alléger le code
-                // value={newProject.projet_link}
-                value={JSON.stringify(selectedValue.projet_link, {}, 2)}
-                onChange={(e) =>
-                  setNewProject((prevState) => ({
-                    ...prevState,
-                    projet_link: e.target.value,
-                  }))
-                }
+                value={selectedValue.projet_link}
+                onChange={modify}
               />
             </label>
           </div>
@@ -209,14 +215,9 @@ function DashboardProject() {
                 type="date"
                 id="projectDate"
                 placeholder="projectDate"
-                // value={newProject.project_date}
-                value={JSON.stringify(selectedValue.project_date, {}, 2)}
-                onChange={(e) =>
-                  setNewProject((prevState) => ({
-                    ...prevState,
-                    project_date: e.target.value,
-                  }))
-                }
+                name="project_date"
+                value={selectedValue.project_date}
+                onChange={modify}
               />
             </label>
           </div>
@@ -227,7 +228,8 @@ function DashboardProject() {
                 type="date"
                 id="dateCreated"
                 placeholder="Date Created"
-                value={JSON.stringify(selectedValue.datecreated, {}, 2)}
+                name="datecreated"
+                value={selectedValue.datecreated}
               />
             </label>
           </div>
@@ -238,14 +240,9 @@ function DashboardProject() {
                 type="text"
                 id="projectDescription"
                 placeholder="Project Description"
-                // value={newProject.project_description}
-                value={JSON.stringify(selectedValue.project_description, {}, 2)}
-                onChange={(e) =>
-                  setNewProject((prevState) => ({
-                    ...prevState,
-                    project_description: e.target.value,
-                  }))
-                }
+                name="project_description"
+                value={selectedValue.project_description}
+                onChange={modify}
               />
             </label>
           </div>
