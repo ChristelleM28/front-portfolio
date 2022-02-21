@@ -5,7 +5,7 @@ margin:1rem;
 }
 
 .roundButton {
-  font-size: 26px;
+  font-size: 1.4rem;
   font-family: Georgia, serif;
   background: rgb(var(--blueg));
   color: rgb(var(--lpink));

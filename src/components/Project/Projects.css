@@ -21,10 +21,7 @@
 
 .carousel .overlay {
   width: 80%;
-  /* position: absolute;
-  top: 40%;
-  transform: translateY(-50%); */
-  right: 2%;
+  transform: translateY(-30%);
   padding: 0.4rem 1.5rem;
   text-align: left;
   background: hsla(0, 0%, 0%, 0.5);

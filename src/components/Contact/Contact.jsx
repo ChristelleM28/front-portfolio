@@ -7,38 +7,46 @@ import "./Contact.css";
 const API_URL = process.env.REACT_APP_API_PORTFOLIO_URL;
 
 function Contact() {
-  const [firstName, setFirstName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const [newMessage, setNewMessage] = useState({
+    firstName:"",
+    email:"",
+    message:"",
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios
-      .post(`${API_URL}/api/contact/html`, { firstName, email, message })
-      .then((res) => {
-        if (res.status === 200) {
-          console.log("alerte")
-          alert("Merci");
-        } else {
-          console.log(res);
-        }
-      })
-      .catch((err) => console.error(err.message));
+    if (!newMessage.firstName || !newMessage.email || !newMessage.message) {
+      alert("You must provide all fields");
+
+    } else {
+      axios
+        .post(`${API_URL}/api/contact/html`, newMessage )
+        .then((res) => {
+          if (res.status === 200) {
+            alert("Thank You!");
+            setNewMessage("");
+          } else {
+            console.log(res);
+          }
+        })
+        .catch((err) => console.error(err.message));
+    }
   };
 
   return (
     <div>
-      <form>
+      <form className="contactMeForm">
         <h2 className="contactMe">CONTACT ME</h2>
         <div className="containerForm">
           <div>
             <label htmlFor="firstName" className="firstName">
               <input
+                className="contactInput"
                 type="texte"
                 id="firstName"
                 placeholder="Name"
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
+                value={newMessage.firstName}
+                onChange={(e) => setNewMessage(e.target.value)}
               />
             </label>
           </div>
@@ -46,11 +54,12 @@ function Contact() {
           <div>
             <label htmlFor="email" className="email">
               <input
+                className="contactInput"
                 type="email"
                 id="email"
                 placeholder="Email address"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                value={newMessage.email}
+                onChange={(e) => setNewMessage(e.target.value)}
               />
             </label>
           </div>
@@ -58,11 +67,12 @@ function Contact() {
           <div>
             <label htmlFor="message" className="message">
               <textarea
+                className="textAreaContact"
                 type="message"
                 id="message"
                 placeholder="Message"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
+                value={newMessage.message}
+                onChange={(e) => setNewMessage(e.target.value)}
               />
             </label>
           </div>

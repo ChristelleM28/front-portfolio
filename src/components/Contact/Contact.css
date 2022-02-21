@@ -1,61 +1,48 @@
-.contactMe {
-  width:80%;
-}
-
-form {
+.contactMeForm {
+  background-color: rgba(var(--lpink), 0.7);
   padding: 1rem;
   width: 80%;
-  height: 33rem;
-  margin: 5vh auto ;
+  margin: 7vh auto ;
   border-radius: 15px;
-  position: relative;
-  background-color: rgba(var(--lpink), 0.7);
+  /* position: relative; */
+ 
 }
 
-input {
+.contactInput {
   background-color: rgba(var(--lpink), 0.1);
   color: rgba(var(--green), 0.9);
   height: 2rem;
   width: 80%;
   margin-bottom: 2rem;
+  border-color: rgba(var(--green));
+  outline:none;
 }
 
-textarea {
+.textAreaContact {
   height: 10rem;
   /* height: initial; */
   background-color: rgba(var(--lpink), 0.5);
   width: 80%;
-  
-  font-size: 1.5em;
+  border-color: rgba(var(--green));
+  color:rgba(var(--green));
+  outline:rgba(var(--green));
 }
 
 textarea::placeholder {
   color: rgba(var(--green), 0.9);
 }
 
-@media screen and (min-width: 768px) {
-  /* .rectangleHome {
-   
-  } */
 
-  form {
-    padding: 2rem;
-    width: 60%;
-    height: 32rem;
-    margin: 10vh auto ;
-}
+
+@media screen and (min-width: 768px) {
+  .contactMeForm {
+    margin-top: 9vh;
+  }
 }
 
 @media screen and (min-width: 1024px) {
-  .contactMe {
-    width:80%;
-    margin: 5rem auto 5rem auto;
-
+  .contactMeForm {
+    margin-top: 12vh;
+    width:60%;
   }
-  form {
-    padding: 2rem;
-    width: 40%;
-    height: 38rem;
-    margin: 10vh auto ;
-}
 }

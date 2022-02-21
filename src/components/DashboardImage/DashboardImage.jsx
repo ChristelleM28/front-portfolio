@@ -22,15 +22,9 @@ function DashboardImage() {
     })();
   }, []);
 
-//J'ajoute une nouvelle images
+  //J'ajoute une nouvelle images
 
-
-
-
-//Je supprime une image
-
-
-
+  //Je supprime une image
 
   const [followLink, setFollowLink] = useState(false);
   const handleClick = () => {
@@ -45,8 +39,14 @@ function DashboardImage() {
 
   return (
     <div>
-      <Button title="Disconnect" onClick={handleDisconnect} />
-      {disconnect ? <Navigate to="/admin" /> : ""}
+
+      <div className="disconnectContainer">
+        <DashboardButton
+          className="disconnectButton"
+          buttonName="Disconnect"
+          onClick={handleDisconnect} />
+        {disconnect ? <Navigate to="/admin" /> : ""}
+      </div>
 
       <form id="formAdmin">
         <h2 className="admin"> DASHBOARD IMAGE </h2>
@@ -74,27 +74,29 @@ function DashboardImage() {
               <textarea
                 type="text"
                 id="imageDescription"
-                placeholder="Image Description"
-              />
+                placeholder="Image Description" />
             </label>
           </div>
+
           <div>
             <Button
               title="Dashboard Project"
               more="OK!"
-              onClick={handleClick}
-            />
+              onClick={handleClick} />
             {followLink ? <Navigate to="/admin/dashboardProject" /> : ""}
-          </div>
-          <div className="containerDashboardButton">
-            <DashboardButton className="add" buttonName="Add" />
-            <DashboardButton className="modify" buttonName="Modify" />
-            <DashboardButton className="delete" buttonName="Delete" />
           </div>
         </div>
       </form>
-    </div>
+
+    <div className="containerDashboardButton">
+        <DashboardButton className="add" buttonName="Add" />
+        <DashboardButton className="modify" buttonName="Modify" />
+        <DashboardButton className="delete" buttonName="Delete" />
+      </div>
+
+      </div>
   );
+  
 }
 
 export default DashboardImage;

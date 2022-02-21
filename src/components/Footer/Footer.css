@@ -38,8 +38,7 @@ display:none
 display:flex;
 justify-content: space-between;
 margin:auto;
-width: 30%;
-font-size: 1.6rem;
+font-size: 1.2rem;
 padding:1rem
 }
 
@@ -47,3 +46,17 @@ a {
   text-decoration: none;
   color: rgba(var(--lpink), 0.9);
 }
+
+@media screen and (min-width: 1024px){
+.footerMenuContent nav{
+  width:60%;
+  font-size: 1.4rem;
+  }
+}
+
+@media screen and (min-width: 768px){
+  .footerMenuContent nav{
+    width:50%;
+    font-size: 1.4rem;
+    }
+  }
