@@ -6,7 +6,7 @@
   border-radius: 2rem;
   border: none;
   width: 24vw;
-  height: 6vh;
+  /* height: 6vh; */
   transition: all 0.15s linear 0s;
   text-decoration: none;
   cursor: pointer;
@@ -30,7 +30,7 @@ background-color:rgb(var(--black))
 .containerDashboardButton {
   display: flex;
   justify-content: space-around;
-  padding-top: 6rem;
+ padding-bottom: 2rem;
 }
 
 .dashboardButton.add {
