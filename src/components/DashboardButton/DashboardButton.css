@@ -1,12 +1,12 @@
 .dashboardButton {
-  font-size: 26px;
+  font-size: 1.4rem;
   font-family: Georgia, serif;
   background: rgb(var(--blueg));
   color: rgb(var(--lpink));
   border-radius: 2rem;
   border: none;
   width: 24vw;
-  /* height: 6vh; */
+  height: 6vh;
   transition: all 0.15s linear 0s;
   text-decoration: none;
   cursor: pointer;
@@ -19,10 +19,13 @@ display: flex;
 justify-content: flex-end;
 font-size: 1rem;
 }
+
 button.dashboardButton.disconnectButton {
 border-radius: 3rem;
 font-size: 1rem;
-margin: 1rem;
+margin-top: 2rem;
+margin-right: 2rem;
+padding:1rem;
 background-color:rgb(var(--black))
 }
 

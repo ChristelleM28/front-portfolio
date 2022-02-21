@@ -1,11 +1,11 @@
 .contactMeForm {
+  background-color: rgba(var(--lpink), 0.7);
   padding: 1rem;
   width: 80%;
-  height: 33rem;
-  margin: 5vh auto ;
+  margin: 7vh auto ;
   border-radius: 15px;
-  position: relative;
-  background-color: rgba(var(--lpink), 0.7);
+  /* position: relative; */
+ 
 }
 
 .contactInput {
@@ -17,7 +17,6 @@
   border-color: rgba(var(--green));
   outline:none;
 }
-
 
 .textAreaContact {
   height: 10rem;
@@ -36,11 +35,14 @@ textarea::placeholder {
 
 
 @media screen and (min-width: 768px) {
+  .contactMeForm {
+    margin-top: 9vh;
+  }
 }
 
 @media screen and (min-width: 1024px) {
   .contactMeForm {
-    width:50%;
-    margin: 5rem auto 5rem auto;
+    margin-top: 12vh;
+    width:60%;
   }
 }
