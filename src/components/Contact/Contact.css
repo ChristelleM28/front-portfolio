@@ -43,6 +43,6 @@ textarea::placeholder {
 @media screen and (min-width: 1024px) {
   .contactMeForm {
     margin-top: 12vh;
-    width:60%;
+    width:50%;
   }
 }
