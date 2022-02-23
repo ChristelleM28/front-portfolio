@@ -10,12 +10,12 @@
 
 .contactInput {
   background-color: rgba(var(--lpink), 0.1);
-  color: rgba(var(--green), 0.9);
   height: 2rem;
   width: 80%;
   margin-bottom: 2rem;
   border-color: rgba(var(--green));
   outline:none;
+
 }
 
 .textAreaContact {
@@ -28,12 +28,6 @@
   outline:rgba(var(--green));
 }
 
-textarea::placeholder {
-  color: rgba(var(--green), 0.9);
-}
-
-
-
 @media screen and (min-width: 768px) {
   .contactMeForm {
     margin-top: 9vh;
@@ -43,6 +37,6 @@ textarea::placeholder {
 @media screen and (min-width: 1024px) {
   .contactMeForm {
     margin-top: 12vh;
-    width:60%;
+    width:50%;
   }
 }

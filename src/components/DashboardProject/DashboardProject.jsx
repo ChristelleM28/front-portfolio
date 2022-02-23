@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from "react";
-import {Navigate, useNavigate} from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 import axios from "axios";
 import AsyncSelect from "react-select/async";
 import DashboardButton from "../DashboardButton/DashboardButton";
@@ -9,24 +9,18 @@ import moment from "moment";
 
 const API_URL = process.env.REACT_APP_API_PORTFOLIO_URL;
 
-// déclaration de moment.js
-// const now = moment("2021-12-31 12:00").formatWithJDF('dd.MM.yyyy');
-// console.log(now);
-
 function DashboardProject() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   //je récupère mes projects
   const [projects, setProjects] = useState("");
-  const [submited, setSubmited] = useState(false)
+  const [submited, setSubmited] = useState(false);
 
   // je définis mon state de modification
   const [modifyProject, setModifyProject] = useState(false);
 
   //définition des options pour utilisation de react-select
   const [inputValue, setValue] = useState("Select file");
-
   const [selectedValue, setSelectedValue] = useState({});
-
   // je gère mon changement
   const handleInputChange = (value) => {
     setValue(value);
@@ -34,9 +28,11 @@ function DashboardProject() {
   // je gère ma sélection
   const handleChange = (e) => {
     setModifyProject(true);
-    setSelectedValue(projects.filter(project => {
-      return project.id === parseInt(e.target.value, 10)
-    })[0])
+    setSelectedValue(
+      projects.filter((project) => {
+        return project.id === parseInt(e.target.value, 10);
+      })[0]
+    );
   };
   // je charge mon option avec l'appel à l'API
   const loadOptions = (inputValue) => {
@@ -83,20 +79,12 @@ function DashboardProject() {
           .then(function (response) {
             if (response.status === 201) {
               alert("New Project Created!");
-
-              setNewProject("");
-              // setSelectedValue("");
-              // setProjects({
-              //   project_name: "",
-              //   projet_link: "",
-              //   project_date: "",
-              //   project_description: "",
-              // });
-              // document.getElementById("projectDate").value = "";
-              // document.getElementById("projectName").value = "";
-              // document.getElementById("projetLink").value = "";
-              // document.getElementById("projectDescription").value = "";
-
+              setNewProject({
+                project_name: "",
+                projet_link: "",
+                project_date: "",
+                project_description: "",
+              });
             } else {
               alert("Error");
             }
@@ -113,17 +101,14 @@ function DashboardProject() {
     e.preventDefault();
 
     await axios
-      .put(`${API_URL}/api/projects/${selectedValue.id}`, selectedValue)
+      .put(`${API_URL}/api/projects/${selectedValue.id}`, {...selectedValue, project_date: moment(selectedValue.project_date).format("yyyy-MM-DD")
+      })
       .then((response) => {
         if (response.status === 200) {
           alert("Project modified succesfully");
-
-          // je mets à jour la liste des projects
-          setProjects.filter((projects) => projects.id !== selectedValue.id);
-          setSelectedValue({})
-          setModifyProject(false)
-          setSubmited(!submited)
-
+          setSelectedValue({});
+          setModifyProject(false);
+          setSubmited(!submited);
         } else {
           alert("Error");
         }
@@ -155,11 +140,11 @@ function DashboardProject() {
         if (response.status === 204) {
           alert("Project deleted");
           // je mets à jour la liste des projets
-          setProjects(projects.filter((projects) => projects.id !== selectedValue.id));
-          setValue("");
+          setProjects(
+            projects.filter((projects) => projects.id !== selectedValue.id)
+          );
           setModifyProject(false);
-          setSelectedValue({})
-
+          setSelectedValue({});
         } else {
           alert("Error");
         }
@@ -182,42 +167,31 @@ function DashboardProject() {
 
   return (
     <div>
+
       <div className="disconnectContainer">
         <DashboardButton
           className="disconnectButton"
           buttonName="Disconnect"
           onClick={handleDisconnect}
         />
-        {disconnect ? <Navigate to="/admin"/> : ""}
+        {disconnect ? <Navigate to="/admin" /> : ""}
       </div>
 
       <form id="formAdmin">
+
         <h2 className="admin"> DASHBOARD PROJECT </h2>
         <div className="containerAdmin" id="formAdminId">
           <div>
             <label htmlFor="selectFile" className="selectFile">
-              <pre></pre>
-
-              {/*<AsyncSelect*/}
-              {/*  cacheOptions*/}
-              {/*  defaultOptions*/}
-              {/*  value={selectedValue}*/}
-              {/*  getOptionLabel={(e) => e.project_name}*/}
-              {/*  getOptionValue={(e) => e.id}*/}
-              {/*  loadOptions={loadOptions}*/}
-              {/*  onInputChange={handleInputChange}*/}
-              {/*  onChange={handleChange}*/}
-              {/*/>*/}
-              <select name="project" id="project" onChange={handleChange}>
-                <option defaultChecked={true}>Choisir</option>
-                {projects && projects.map(project => {
-                  return (
-                    <option value={project.id}>{project.project_name}</option>
-                  )
-                })}
+              <select name="project"  id="project" onChange={handleChange}>
+                <option defaultChecked={true}>Select a project</option>
+                {projects &&
+                  projects.map((project) => {
+                    return (
+                      <option value={project.id} key={project.id}>{project.project_name}</option>
+                    );
+                  })}
               </select>
-
-              <pre></pre>
             </label>
           </div>
 
@@ -230,7 +204,11 @@ function DashboardProject() {
                 placeholder="Project Name"
                 //exemple si on a plusieurs states pour alléger le code
                 // value={newProject.project_name}
-                value={modifyProject ? selectedValue.project_name : newProject.project_name}
+                value={
+                  modifyProject
+                    ? selectedValue.project_name
+                    : newProject.project_name
+                }
                 onChange={modify}
               />
             </label>
@@ -244,7 +222,11 @@ function DashboardProject() {
                 id="projetLink"
                 name="projet_link"
                 placeholder="Project Link"
-                value={modifyProject ? selectedValue.projet_link : newProject.projet_link}
+                value={
+                  modifyProject
+                    ? selectedValue.projet_link
+                    : newProject.projet_link
+                }
                 onChange={modify}
               />
             </label>
@@ -257,12 +239,11 @@ function DashboardProject() {
                 id="projectDate"
                 placeholder="projectDate"
                 name="project_date"
-
-                //utilisation de la bibliothèque moment pour conversion date
-                //value={moment(selectedValue.project_date).format("yyyy-MM-DD")}
-
-                value={modifyProject ? moment(selectedValue.project_date).format("yyyy-MM-DD") : newProject.project_date}
-
+                value={
+                  modifyProject
+                    ? moment(selectedValue.project_date).format("yyyy-MM-DD")
+                    : newProject.project_date
+                }
                 onChange={modify}
               />
             </label>
@@ -271,14 +252,13 @@ function DashboardProject() {
           <div>
             <label htmlFor="dateCreated" className="dateCreated">
               <input
-                type="date"
+                // type="date"
+                readOnly={true}
                 id="dateCreated"
                 placeholder="Date Created"
                 name="datecreated"
-
-                value={moment(selectedValue.datecreated).format("yyyy-MM-DD")}
-                hidden={true}
-
+                value={moment(selectedValue.datecreated).format("DD-MM-yyyy")}
+                hidden={false}
               />
             </label>
           </div>
@@ -289,36 +269,45 @@ function DashboardProject() {
                 id="projectDescription"
                 placeholder="Project Description"
                 name="project_description"
-                value={modifyProject ? selectedValue.project_description : newProject.project_description}
+                value={
+                  modifyProject
+                    ? selectedValue.project_description
+                    : newProject.project_description
+                }
                 onChange={modify}
               />
             </label>
           </div>
+          </div>
+          </form>
 
           <div>
-            <Button title="Dashboard Image" more="OK!" onClick={handleClick}/>
-            {followLink ? <Navigate to="/admin/dashboardImage"/> : ""}
+            <Button title="Dashboard Image" more="OK!" onClick={handleClick} />
+            {followLink ? <Navigate to="/admin/dashboardImage" /> : ""}
           </div>
-        </div>
-      </form>
 
-      <div className="containerDashboardButton">
-        <DashboardButton
-          className="add"
-          buttonName="Add"
-          onClick={handleAddProject}
-        />
-        <DashboardButton
-          className="modify"
-          buttonName="Modify"
-          onClick={handleModifyProject}
-        />
-        <DashboardButton
-          className="delete"
-          buttonName="Delete"
-          onClick={handleDeleteProject}
-        />
-      </div>
+          <div className="containerDashboardButton">
+            <DashboardButton
+              className="add"
+              buttonName="Add"
+              onClick={handleAddProject}
+            />
+
+            <DashboardButton
+              className="modify"
+              buttonName="Modify"
+              onClick={handleModifyProject}
+            />
+
+            <DashboardButton
+              className="delete"
+              buttonName="Delete"
+              onClick={handleDeleteProject}
+            />
+
+          </div>
+        
+      
     </div>
   );
 }

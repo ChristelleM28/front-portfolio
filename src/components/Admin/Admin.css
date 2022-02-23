@@ -6,31 +6,49 @@ form#formAdmin {
   height: auto;
   border-radius: 20rem;
   background-color: rgba(var(--green), 0.8);
+
+  height: auto;
+}
+form#formAdminImage {
+  width: 80%;
+  border-radius: 20rem;
+  background-color: rgba(var(--green), 0.8);
+  height: 31rem;
 }
 
-.admin {
+form#formAdminProject {
+  width: 80%;
+  border-radius: 20rem;
+  background-color: rgba(var(--green), 0.8);
+  height: 36rem;
+
+}
+
+.admin, input {
   color: rgba(var(--lpink));
 }
 
-input {
+input, select {
   background-color: rgba(var(--lpink), 0.5);
   height: 2rem;
   width: 80%;
   margin-bottom: 1.5rem;
   border-radius: 5px;
   overflow: none;
-  color: rgba(var(--lpink));
+
 }
 
 input::placeholder {
-  color: rgba(var(--lpink));
   font-size: 1.5em;
+}
+
+select, textarea {
+  color: rgba(var(--blueg));
 }
 
 textarea {
   height: 10rem;
   width: 80%;
-  color: var(--green);
   border-radius: 5px;
 }
 
@@ -42,41 +60,13 @@ input:-internal-autofill-selected {
   color: rgba(var(--lpink));
 }
 
-.css-1s2u09g-control {
-  margin: auto;
-  width: 80%;
-  border-radius: 5px;
-}
-
-select.css-1pahdxg-control {
-  margin: auto;
-  width: 80%;
-  border-radius: 5px;
-}
-
-.css-6j8wv5-Input {
-  margin: auto;
-  width: 80%;
-  border-radius: 5px;
-}
-
-.css-319lph-ValueContainer {
-  margin: auto;
-  width: 80%;
-  border-radius: 5px;
-}
-
-/* .css-14el2xx-placeholder{
-  margin:auto;
-  width:80%;
-  border-radius:5px;
-} */
-
 @media screen and (min-width: 768px) {
   form#formAdmin {
     width: 80%;
     border-radius: 50rem;
     padding: 4rem;
+  }
+  form {
   }
 }
 
@@ -87,5 +77,6 @@ select.css-1pahdxg-control {
     width: 50%;
     border-radius: 20rem;
     /* height: 32rem; */
+
   }
 }
