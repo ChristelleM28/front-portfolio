@@ -138,6 +138,7 @@ function DashboardImage() {
 
   return (
     <div>
+
       <div className="disconnectContainer">
         <DashboardButton
           className="disconnectButton"
@@ -148,6 +149,7 @@ function DashboardImage() {
       </div>
 
       <form id="formAdmin">
+
         <h2 className="admin"> DASHBOARD IMAGE </h2>
         <div className="containerAdmin">
           <div>

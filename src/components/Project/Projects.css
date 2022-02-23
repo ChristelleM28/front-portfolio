@@ -19,6 +19,10 @@
   width: 100%;
 }
 
+li .slide {
+  position: relative;
+}
+
 .carousel .overlay {
   width: 80%;
   transform: translateY(-30%);
@@ -26,14 +30,14 @@
   text-align: left;
   background: hsla(0, 0%, 0%, 0.5);
   color: #ffff;
-  overflow: scroll;
   border-radius: 15px;
+  margin-left:auto;
+  margin-right: 1rem;
 }
 
-
-.overlay-description{
-color: red;
-height: 50px;
+.overlay-description {
+  color: red;
+  height: 50px;
 }
 
 /* pour les miniatures */
@@ -48,6 +52,8 @@ height: 50px;
     padding: 3rem;
     border-radius: 15px;
   }
- }
 
-
+  .carousel .overlay {
+    margin-right: 3.5rem;
+  }
+}

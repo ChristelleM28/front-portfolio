@@ -167,6 +167,7 @@ function DashboardProject() {
 
   return (
     <div>
+
       <div className="disconnectContainer">
         <DashboardButton
           className="disconnectButton"
@@ -177,6 +178,7 @@ function DashboardProject() {
       </div>
 
       <form id="formAdmin">
+
         <h2 className="admin"> DASHBOARD PROJECT </h2>
         <div className="containerAdmin" id="formAdminId">
           <div>
