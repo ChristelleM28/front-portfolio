@@ -25,7 +25,6 @@ function ModifyProject({ selectedValue, setSelectedValue, setModifyProject }) {
             project_description: "",
           });
           setModifyProject(false);
-          // setSubmited(!submited);
         } else {
           alert("Error");
         }

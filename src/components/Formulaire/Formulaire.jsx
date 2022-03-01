@@ -1,17 +1,13 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React from "react";
 import moment from "moment";
 import "../Admin/Admin.css";
 
-const API_URL = process.env.REACT_APP_API_PORTFOLIO_URL;
 
 function Formulaire({
   projects,
-  setProjects,
   selectedValue,
   setSelectedValueToto,
   handleChange,
-  newProject,
   modifyProject,
   setModifyProject,
 }) {
@@ -58,7 +54,6 @@ function Formulaire({
                 onChange={handleChange}
               />
             </label>
-            {/*mapper sur le tableau projet et retourner une balise "option" dans laquelle tu affiches le nom du projet */}
           </div>
 
           <div>
