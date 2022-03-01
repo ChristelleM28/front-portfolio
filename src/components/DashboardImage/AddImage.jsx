@@ -4,41 +4,39 @@ import DashboardButton from "../DashboardButton/DashboardButton";
 
 const API_URL = process.env.REACT_APP_API_PORTFOLIO_URL;
 
-function AddProject({
-  projects,
-  setProjects,
+function AddImage({
+  images,
+  setImages,
   setSelectedValueToto,
   selectedValue,
   setSubmited,
 }) {
 
-  const handleAddProject = async (e) => {
+  const handleAddImage = async (e) => {
     e.preventDefault();
     if (
-      !selectedValue.project_name ||
-      !selectedValue.projet_link ||
-      !selectedValue.project_date ||
-      !selectedValue.project_description
+      !selectedValue.img_name ||
+      !selectedValue.img_url ||
+      !selectedValue.img_description
     ) {
       alert("You must provide all datas");
     } else {
       try {
         await axios
           // renvois le state des infos de création
-          .post(`${API_URL}/api/projects`, selectedValue)
+          .post(`${API_URL}/api/images`, selectedValue)
           .then(function (response) {
             if (response.status === 201) {
-              alert("New Project Created!");
+              alert("New Image Created!");
 
-              // je mets à jour la liste des projets
-              setProjects(
-                projects.filter((project) => project.id !== selectedValue.id)
+              // je mets à jour la liste des images
+              setImages(
+                images.filter((image) => image.id !== selectedValue.id)
               );
               setSelectedValueToto({
-                project_name: "",
-                projet_link: "",
-                project_date: "",
-                project_description: "",
+                img_name: "",
+                img_url: "",
+                img_description: "",
               });
               setSubmited(true)
             } else {
@@ -46,8 +44,9 @@ function AddProject({
             }
           });
       } catch (err) {
-        console.log(err.response);
-        alert(err.response.data);
+        // console.log(err.response);
+        alert("c'est pas bon! ligne 48 add image");
+        // alert(err.response.data);
       }
     }
   };
@@ -57,10 +56,10 @@ function AddProject({
       <DashboardButton
         className="add"
         buttonName="Add"
-        onClick={handleAddProject}
+        onClick={handleAddImage}
       />
     </div>
   );
 }
 
-export default AddProject;
+export default AddImage;

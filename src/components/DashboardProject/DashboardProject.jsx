@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import axios from "axios";
-// import DashboardButton from "../DashboardButton/DashboardButton";
 import Button from "../Button/Button";
 import Formulaire from "../Formulaire/Formulaire";
 import "../Admin/Admin.css";
-import DisconnectButton from "./DisconnectButton";
+import DisconnectButton from "../DashboardButton/DisconnectButton";
 import AddProject from "./AddProject";
 import ModifyProject from "./ModifyProject";
 import DeleteProject from "./DeleteProject";
@@ -22,16 +21,16 @@ function DashboardProject() {
     project_date: "",
     project_description: "",
   });
+
   // je définis mon state de modification
   const [modifyProject, setModifyProject] = useState(false);
 
   // je gère ma sélection
   const handleChange = (e) => {
-      setSelectedValue((prevstate) => ({
-        ...prevstate,
-        [e.target.name]: e.target.value,
-      }));
-  
+    setSelectedValue((prevstate) => ({
+      ...prevstate,
+      [e.target.name]: e.target.value,
+    }));
   };
 
   useEffect(() => {
@@ -63,7 +62,6 @@ function DashboardProject() {
       <div>
         <Formulaire
           projects={projects}
-          setprojects={setProjects}
           selectedValue={selectedValue}
           setSelectedValueToto={setSelectedValue}
           handleChange={handleChange}
