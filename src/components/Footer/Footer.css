@@ -55,6 +55,7 @@ width: 50%;
 .footerButton {
   color: rgba(var(--lpink), 0.9);
 }
+}
 
 @media screen and (min-width: 1024px){
 .footerMenuContent nav{
@@ -69,4 +70,3 @@ width: 50%;
     font-size: 1.4rem;
     }
   }
-
