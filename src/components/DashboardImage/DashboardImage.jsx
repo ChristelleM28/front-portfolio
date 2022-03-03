@@ -19,7 +19,6 @@ function DashboardImage() {
     img_name: "",
     img_url: "",
     img_description: "",
-    projects_name: "select a project",
   });
 
   // je définis mon state de modification
@@ -65,6 +64,7 @@ function DashboardImage() {
           setImages={setImages}
           selectedValue={selectedValue}
           setSelectedValue={setSelectedValue}
+          setSelectedValueToto={setSelectedValue}
           handleChange={handleChange}
           submited={submited}
           />

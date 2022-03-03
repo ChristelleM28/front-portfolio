@@ -2,8 +2,7 @@ import React from "react";
 import moment from "moment";
 import "../Admin/Admin.css";
 
-
-function Formulaire({
+function FormulaireProject({
   projects,
   selectedValue,
   setSelectedValueToto,
@@ -28,8 +27,15 @@ function Formulaire({
         <div className="containerAdmin" id="formAdminId">
           <div>
             <label htmlFor="selectFile" className="selectFile">
-              <select name="project" id="project" value ="" onChange={handleModify}>
-                <option selected={!modifyProject ? "selected": "" }>Select a projects</option>
+              <select
+                name="project"
+                id="project"
+                value=""
+                onChange={handleModify}
+              >
+                <option selected={!modifyProject ? "selected" : ""}>
+                  Select a projects
+                </option>
                 {projects &&
                   projects.map((project) => {
                     return (
@@ -112,4 +118,4 @@ function Formulaire({
   );
 }
 
-export default Formulaire;
+export default FormulaireProject;
