@@ -17,7 +17,8 @@ function AddImage({
     if (
       !selectedValue.img_name ||
       !selectedValue.img_url ||
-      !selectedValue.img_description
+      !selectedValue.img_description || 
+      !selectedValue.projects_id
     ) {
       alert("You must provide all datas");
     } else {

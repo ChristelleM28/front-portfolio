@@ -7,36 +7,42 @@ const API_URL = process.env.REACT_APP_API_PORTFOLIO_URL;
 function FormulaireImage({
   images,
   selectedValue,
-  setSelectedValueToto,
+  setSelectedValue,
   handleChange,
   modifyImage,
+  submited,
 }) {
+  // Je récupère les projets
+  const [projects, setProjects] = useState("");
+
   // gère la modification de l'image
   const handleModify = (e) => {
     // setModifyImage(true);
-    setSelectedValueToto(
+    setProjects();
+    setSelectedValue(
       images.filter((image) => {
         return image.id === parseInt(e.target.value, 10);
       })[0]
     );
   };
 
-  //je récupère les projects
-  const [projectsList, setProjectsList] = useState("");
+  const onChange = (e) => {
+    setSelectedValue({ ...selectedValue, projects_id: e.target.value });
+  };
+
   useEffect(() => {
     (async () => {
       await axios
         .get(`${API_URL}/api/projects/`)
         .then((response) => response.data)
         .then((data) => {
-          setProjectsList(data);
+          setProjects(data);
         })
         .catch((err) => {
-          // console.log(err.response);
-          console.log("erreur fomulaire image ligne 36")
+          console.log(err);
         });
     })();
-  }, []);
+  }, [submited]);
 
   return (
     <div>
@@ -61,31 +67,29 @@ function FormulaireImage({
             </label>
           </div>
 
-
-//vérifier le fonctionnement pour lier l'id du projet lié à l'image
-          {/* <div>
+          <div>
             <label htmlFor="selectProject" className="selectProject">
               <select
                 name="projectName"
                 id="projectName"
-                value=""
-                onChange={handleModify}
+                value={projects.projects_id}
+                onChange={onChange}
               >
-                <option selected={!projectsList ? "selected" : ""}>
+                <option selected={!selectedValue ? "selected" : ""}>
                   Select a project
                 </option>
 
-                {projectsList &&
-                  projectsList.map((projects) => {
+                {projects &&
+                  projects.map((project) => {
                     return (
-                      <option value={projects.id} key={projects.id}>
-                        {projects.project_name}
+                      <option value={project.id} key={project.id}>
+                        {project.project_name}
                       </option>
                     );
                   })}
               </select>
             </label>
-          </div> */}
+          </div>
 
           <div>
             <label htmlFor="imageName" className="imageName">

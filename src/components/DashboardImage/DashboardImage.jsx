@@ -19,12 +19,13 @@ function DashboardImage() {
     img_name: "",
     img_url: "",
     img_description: "",
+    projects_name: "select a project",
   });
 
   // je définis mon state de modification
   const [modifyImage, setModifyImage] = useState(false);
 
-  // je gère ma sélection
+    // je gère ma sélection
   const handleChange = (e) => {
     setSelectedValue((prevstate) => ({
       ...prevstate,
@@ -61,10 +62,12 @@ function DashboardImage() {
       <div>
         <FormulaireImage
           images={images}
+          setImages={setImages}
           selectedValue={selectedValue}
-          setSelectedValueToto={setSelectedValue}
+          setSelectedValue={setSelectedValue}
           handleChange={handleChange}
-        />
+          submited={submited}
+          />
       </div>
 
       <div>
