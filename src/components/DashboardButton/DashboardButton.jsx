@@ -1,7 +1,7 @@
 import React from "react";
 import "./DashboardButton.css";
 
-function DashboardButton({buttonName, className, onClick, }) {
+function DashboardButton({buttonName, className, onClick }) {
   return (
     <div>
       
