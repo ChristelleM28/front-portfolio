@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import axios from "axios";
 import Button from "../Button/Button";
-import Formulaire from "../Formulaire/Formulaire";
+import FormulaireProject from "../Formulaire/FormulaireProject";
 import "../Admin/Admin.css";
 import DisconnectButton from "../DashboardButton/DisconnectButton";
 import AddProject from "./AddProject";
@@ -60,7 +60,7 @@ function DashboardProject() {
       </div>
 
       <div>
-        <Formulaire
+        <FormulaireProject
           projects={projects}
           selectedValue={selectedValue}
           setSelectedValueToto={setSelectedValue}

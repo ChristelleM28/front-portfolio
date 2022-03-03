@@ -11,13 +11,12 @@ function AddImage({
   selectedValue,
   setSubmited,
 }) {
-
   const handleAddImage = async (e) => {
     e.preventDefault();
     if (
       !selectedValue.img_name ||
       !selectedValue.img_url ||
-      !selectedValue.img_description || 
+      !selectedValue.img_description ||
       !selectedValue.projects_id
     ) {
       alert("You must provide all datas");
@@ -38,8 +37,9 @@ function AddImage({
                 img_name: "",
                 img_url: "",
                 img_description: "",
+                projects_id: "",
               });
-              setSubmited(true)
+              setSubmited(true);
             } else {
               alert("Error");
             }

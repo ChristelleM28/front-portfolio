@@ -8,6 +8,7 @@ function FormulaireImage({
   images,
   selectedValue,
   setSelectedValue,
+  setSelectedValueToto,
   handleChange,
   modifyImage,
   submited,
@@ -19,7 +20,7 @@ function FormulaireImage({
   const handleModify = (e) => {
     // setModifyImage(true);
     setProjects();
-    setSelectedValue(
+    setSelectedValueToto(
       images.filter((image) => {
         return image.id === parseInt(e.target.value, 10);
       })[0]
@@ -75,7 +76,8 @@ function FormulaireImage({
                 value={projects.projects_id}
                 onChange={onChange}
               >
-                <option selected={!selectedValue ? "selected" : ""}>
+                {/* initialisation du projet suite submit sélection */}
+                <option selected={selectedValue.projects_id ==="" ? "selected" : ""}>
                   Select a project
                 </option>
 
