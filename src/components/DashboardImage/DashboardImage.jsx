@@ -8,10 +8,13 @@ import DisconnectButton from "../DashboardButton/DisconnectButton";
 import AddImage from "./AddImage";
 import ModifyImage from "./ModifyImage";
 import DeleteImage from "./DeleteImage";
+import { toast } from "react-toastify";
+
 
 const API_URL = process.env.REACT_APP_API_PORTFOLIO_URL;
 
 function DashboardImage() {
+  
   //je récupère mes images
   const [images, setImages] = useState("");
   const [submited, setSubmited] = useState(false);
@@ -42,6 +45,7 @@ function DashboardImage() {
         })
         .catch((err) => {
           console.log(err);
+          toast.error("error")
         });
     })();
   }, [modifyImage, submited]);

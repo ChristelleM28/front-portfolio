@@ -2,6 +2,7 @@ import React from "react";
 import moment from "moment";
 import axios from "axios";
 import DashboardButton from "../DashboardButton/DashboardButton";
+import { toast } from "react-toastify";
 
 const API_URL = process.env.REACT_APP_API_PORTFOLIO_URL;
 
@@ -17,7 +18,7 @@ function ModifyProject({ selectedValue, setSelectedValue, setModifyProject }) {
       })
       .then((response) => {
         if (response.status === 200) {
-          alert("Project modified succesfully");
+          toast.success("Project modified succesfully");
           setSelectedValue({
             project_name:"",
             projet_link: "",

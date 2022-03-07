@@ -6,7 +6,7 @@ import "./Admin.css";
 
 const API_URL = process.env.REACT_APP_API_PORTFOLIO_URL;
 
-function Admin() {
+function Admin({connected, setConnected}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -18,27 +18,28 @@ function Admin() {
       alert("You must provide all fields");
     } else {
       try {
-          const response = await axios.post(`${API_URL}/api/auth/admin`,
+        const response = await axios.post(
+          `${API_URL}/api/auth/admin`,
           {
-        email,
-        password,
-      },
-      {withCredentials: true,
-        }); 
+            email,
+            password,
+          },
+          { withCredentials: true }
+        );
 
-      if(response.status === 200){
-        alert("You're Login");
-        setEmail("");
-        setPassword("");
-        setFollowLink(!followLink);
-      } else {
-        alert("Error");
-          } 
+        if (response.status === 200) {
+          Navigate("/admin");
+          alert("You're Login");
+          setEmail("");
+          setPassword("");
+          setFollowLink(!followLink);
+        } else {
+          alert("Error");
         }
-          catch (err) {
-      alert(err.response.data);
+      } catch (err) {
+        alert(err.response.data);
+      }
     }
-  }
   };
 
   return (

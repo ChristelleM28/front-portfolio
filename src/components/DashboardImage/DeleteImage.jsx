@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import DashboardButton from "../DashboardButton/DashboardButton";
+import { toast } from "react-toastify";
 
 const API_URL = process.env.REACT_APP_API_PORTFOLIO_URL;
 
@@ -21,7 +22,8 @@ function DeleteImage({
       )
       .then((response) => {
         if (response.status === 204) {
-          alert("Image deleted");
+          // alert("Image deleted");
+          toast.success("Image deleted!");
 
           // je mets à jour la liste des images
           setImages(images.filter((image) => image.id !== selectedValue.id));
@@ -31,11 +33,13 @@ function DeleteImage({
             image_description: "",
           });
         } else {
-          alert("Error");
+          toast.warning("error")
+          // alert("Error");
         }
       })
 
       .catch((err) => {
+        toast.warning("error select an image")
         console.log(err);
       });
   };
