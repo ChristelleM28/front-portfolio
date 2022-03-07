@@ -3,6 +3,7 @@ import Button from "../Button/Button";
 import Footer from "../Footer/Footer";
 import axios from "axios";
 import "./Contact.css";
+import { toast } from "react-toastify";
 
 const API_URL = process.env.REACT_APP_API_PORTFOLIO_URL;
 
@@ -16,13 +17,14 @@ function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!newMessage.firstName || !newMessage.email || !newMessage.message) {
-      alert("You must provide all fields");
+         toast.error("You must provide all fields");
     } else {
       axios
         .post(`${API_URL}/api/contact/html`, newMessage)
         .then((res) => {
           if (res.status === 200) {
-            alert("Thank You!");
+            // alert("Thank You!");
+            toast.success("You message has been submitted!");
             setNewMessage("");
           } else {
             console.log(res);
@@ -45,7 +47,9 @@ function Contact() {
                 id="firstName"
                 placeholder="Name"
                 value={newMessage.firstName}
-                onChange={(e) => setNewMessage({...newMessage, firstName:e.target.value})}
+                onChange={(e) =>
+                  setNewMessage({ ...newMessage, firstName: e.target.value })
+                }
               />
             </label>
           </div>
@@ -58,7 +62,9 @@ function Contact() {
                 id="email"
                 placeholder="Email address"
                 value={newMessage.email}
-                onChange={(e) => setNewMessage({...newMessage, email:e.target.value})}
+                onChange={(e) =>
+                  setNewMessage({ ...newMessage, email: e.target.value })
+                }
               />
             </label>
           </div>
@@ -71,7 +77,9 @@ function Contact() {
                 id="message"
                 placeholder="Message"
                 value={newMessage.message}
-                onChange={(e) => setNewMessage({...newMessage, message:e.target.value})}
+                onChange={(e) =>
+                  setNewMessage({ ...newMessage, message: e.target.value })
+                }
               />
             </label>
           </div>

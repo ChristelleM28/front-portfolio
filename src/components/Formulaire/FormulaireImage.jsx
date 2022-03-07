@@ -73,7 +73,6 @@ function FormulaireImage({
               <select
                 name="projectName"
                 id="projectName"
-                value={projects.projects_id}
                 onChange={onChange}
               >
                 {/* initialisation du projet suite submit sélection */}

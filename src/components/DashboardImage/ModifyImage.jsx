@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import DashboardButton from "../DashboardButton/DashboardButton";
+import { toast } from "react-toastify";
 
 const API_URL = process.env.REACT_APP_API_PORTFOLIO_URL;
 
@@ -16,7 +17,8 @@ function ModifyImage({ selectedValue, setSelectedValue, setModifyImage }) {
       })
       .then((response) => {
         if (response.status === 200) {
-          alert("Image modified succesfully");
+          toast.success("Image modified succesfully")
+          // alert("Image modified succesfully");
           setSelectedValue({
             img_name:"",
             img_url: "",
@@ -24,7 +26,8 @@ function ModifyImage({ selectedValue, setSelectedValue, setModifyImage }) {
           });
           setModifyImage(true);
         } else {
-          alert("Error");
+          toast.warning("error")
+          // alert("Error");
         }
       });
   };

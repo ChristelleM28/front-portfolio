@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import DashboardButton from "../DashboardButton/DashboardButton";
+import { toast } from "react-toastify";
 
 const API_URL = process.env.REACT_APP_API_PORTFOLIO_URL;
 
@@ -20,7 +21,7 @@ function AddProject({
       !selectedValue.project_date ||
       !selectedValue.project_description
     ) {
-      alert("You must provide all datas");
+      toast.error("You must provide all mandatories fields");
     } else {
       try {
         await axios
@@ -28,7 +29,7 @@ function AddProject({
           .post(`${API_URL}/api/projects`, selectedValue)
           .then(function (response) {
             if (response.status === 201) {
-              alert("New Project Created!");
+              toast.success("New project created!");
 
               // je mets à jour la liste des projets
               setProjects(
@@ -42,12 +43,14 @@ function AddProject({
               });
               setSubmited(true)
             } else {
-              alert("Error");
+              // alert("Error");
+              toast.error("error addproject ligne 49");
             }
           });
       } catch (err) {
         console.log(err.response);
-        alert(err.response.data);
+        toast.error("error addproject ligne 54");
+        // alert(err.response.data);
       }
     }
   };

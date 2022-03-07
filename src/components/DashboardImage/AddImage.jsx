@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import DashboardButton from "../DashboardButton/DashboardButton";
+import { toast } from "react-toastify";
 
 const API_URL = process.env.REACT_APP_API_PORTFOLIO_URL;
 
@@ -19,7 +20,7 @@ function AddImage({
       !selectedValue.img_description ||
       !selectedValue.projects_id
     ) {
-      alert("You must provide all datas");
+      toast.error("You must provide all mandatories fields")
     } else {
       try {
         await axios
@@ -27,7 +28,7 @@ function AddImage({
           .post(`${API_URL}/api/images`, selectedValue)
           .then(function (response) {
             if (response.status === 201) {
-              alert("New Image Created!");
+              toast.success("New Image Created!")
 
               // je mets à jour la liste des images
               setImages(
@@ -46,7 +47,7 @@ function AddImage({
           });
       } catch (err) {
         // console.log(err.response);
-        alert("c'est pas bon! ligne 48 add image");
+        toast.warning("c'est pas bon! ligne 51 add image");
         // alert(err.response.data);
       }
     }

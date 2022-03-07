@@ -8,10 +8,13 @@ import DisconnectButton from "../DashboardButton/DisconnectButton";
 import AddProject from "./AddProject";
 import ModifyProject from "./ModifyProject";
 import DeleteProject from "./DeleteProject";
+import { toast } from "react-toastify";
+
 
 const API_URL = process.env.REACT_APP_API_PORTFOLIO_URL;
 
 function DashboardProject() {
+
   //je récupère mes projects
   const [projects, setProjects] = useState("");
   const [submited, setSubmited] = useState(false);
@@ -98,6 +101,8 @@ function DashboardProject() {
             setSelectedValueToto={setSelectedValue}
             setProjects={setProjects}
             projects={projects}
+            alert={
+              "The project is deleted!"}
           />
         </div>
       </div>

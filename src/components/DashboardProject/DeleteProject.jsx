@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import DashboardButton from "../DashboardButton/DashboardButton";
+import { toast } from "react-toastify";
 
 const API_URL = process.env.REACT_APP_API_PORTFOLIO_URL;
 
@@ -16,8 +17,7 @@ function DeleteProject({selectedValue, setSelectedValueToto, setProjects, projec
       )
       .then((response) => {
         if (response.status === 204) {
-          alert("Project deleted");
-
+          toast.success("The project is deleted!");
           // je mets à jour la liste des projets
           setProjects(
             projects.filter((project) => project.id !== selectedValue.id)
@@ -32,19 +32,17 @@ function DeleteProject({selectedValue, setSelectedValueToto, setProjects, projec
           alert("Error");
         }
       })
-
       .catch((err) => {
         console.log(err);
       });
-  };
+    };
 
   return (
     <>
       <DashboardButton
         className="delete"
         buttonName="Delete"
-        onClick={handleDeleteProject}
-      />
+        onClick={handleDeleteProject}>Show Alert</DashboardButton>
     </>
   );
 }
