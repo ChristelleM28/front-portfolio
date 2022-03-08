@@ -44,6 +44,8 @@ h2 {
   text-decoration: none;
   font-size:1.4rem;
 }
+
+
 .span{
   text-align: center;
 }
@@ -51,6 +53,11 @@ h2 {
 @media screen and (min-width: 768px) {
   .rectangleHome {
     width: 50%;
+  }
+  .about:hover{
+    background: rgba(var(--lpink));
+    color: rgb(var(--blueg));
+    font-size:2rem;
   }
 }
 

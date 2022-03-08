@@ -20,37 +20,22 @@ function About() {
         <div className="aboutMe">
           <h2>ABOUT ME</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo facilis
-            blanditiis voluptatibus impedit dignissimos accusantium illo fuga
-            perspiciatis, voluptas vel unde? Quae soluta eaque totam neque
-            doloribus sit nam voluptas. Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Quo facilis blanditiis voluptatibus impedit
-            dignissimos accusantium illo fuga perspiciatis, voluptas vel unde?
-            Quae soluta eaque totam neque doloribus sit nam voluptas. Lorem
-            ipsum dolor sit amet consectetur adipisicing elit. Quo facilis
-            blanditiis voluptatibus impedit dignissimos accusantium illo fuga
-            perspiciatis, voluptas vel unde? Quae soluta eaque totam neque
-            doloribus sit nam voluptas. Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Quo facilis blanditiis voluptatibus impedit
-            dignissimos accusantium illo fuga perspiciatis, voluptas vel unde?
-            Quae soluta eaque totam neque doloribus sit nam voluptas. Lorem
-            ipsum dolor sit amet consectetur adipisicing elit. Quo facilis
-            blanditiis voluptatibus impedit dignissimos accusantium illo fuga
-            perspiciatis, voluptas vel unde? Quae soluta eaque totam neque
-            doloribus sit nam voluptas. Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Quo facilis blanditiis voluptatibus impedit
-            dignissimos accusantium illo fuga perspiciatis, voluptas vel unde?
-            Quae soluta eaque totam neque doloribus sit nam voluptas. Lorem
-            ipsum dolor sit amet consectetur adipisicing elit. Quo facilis
-            blanditiis voluptatibus impedit dignissimos accusantium illo fuga
-            perspiciatis, voluptas vel unde? Quae soluta eaque totam neque
-            doloribus sit nam voluptas.
+            Après 14 ans de service aux clients et 4 ans de gestion de projets
+            en étant l'interface entre les clients et les DSI, je décide de me
+            reconvertir vers un métier directement orienté tech. <br></br><br></br>
+            Je choisi de devenir <strong>développeuse web</strong> et d'intégrer la Wild Code School pour passer mon titre.
+            <br></br><br></br>Je poursuis ensuite mon parcours par une alternance afin d'approfondir mes connaîssances.
+            <br></br><br></br>En parallèle, je m'intéresse à tout ce qui peut venir compléter mon cursus. 
+            <br></br><br></br>
+            Avec un parcours qui peut sembler atypique, je combine aujourd'hui une solide expérience et une formation de qualité
+            qui vont me permettre d'évoluer au sein des métiers de la tech'.
           </p>
         </div>
         <Button title="My CV" more="Let's go!" onClick={handleClick} />
-        </div>
-        {displayPdf && <ModalCv onClick={() => setDisplayPdf(!displayPdf)} />}
-      
+      </div>
+      <div> 
+      {displayPdf && <ModalCv onClick={() => setDisplayPdf(!displayPdf)} />}
+      </div>
       <Footer />
     </div>
   );
