@@ -4,9 +4,9 @@
 
 /*rectangle de page About*/
 .rectangleAbout {
-  width: 80%;
+  width: 100%;
   background-color: rgba(var(--lpink), 0.8);
-  margin: 5vh auto 14vh auto;
+  margin-bottom: 15vh;
   border-radius: 15px;
 }
 
@@ -27,11 +27,13 @@ p {
 @media screen and (min-width: 768px) {
   .rectangleAbout {
     width: 70%;
+     margin: 5vh auto 14vh auto;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .rectangleAbout {
     width: 70%;
+    margin: 5vh auto 14vh auto;
   }
 }
