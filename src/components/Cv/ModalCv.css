@@ -1,26 +1,42 @@
 .modalCvContainer {
-  background: red;
   overflow: auto;
-  height: auto;
-
-
-  
-  /* position: absolute; */
+  width: 60%;
+  height: 1400px;
+  margin: auto;
+  position: absolute;
+  top: 10%;
+  left: 20%;
   /* width: 275px; */
   /* height: 2500px; */
   /* display: flex; */
   /* flex-direction: column;
   z-index: 2;*/
   /* transform: translate(-50%, -50%); */
-  /* 
-  top: 45%;
-  left: 30%;
-  /* margin-top: 0;*/
 }
 
 iframe {
-width: 100%;
-height: 100%;
+width:100% ;
+height:1200px;
+border-radius: 50px;
 }
 
+button{
+  height: 5rem;
+  width: 5rem;
+  border-radius:50px;
+  border: 1px solid rgba(var(--lpink));
+  background-color: rgba(var(--green));
+  color: rgba(var(--lpink));
+}
 
+button:hover {
+  height:6rem;
+  width:6rem;
+  background-color: rgba(var(--lpink));
+  color: rgba(var(--green));
+  font-size: 1.5em;
+}
+
+@media screen and (min-width: 768px) {
+  
+}
