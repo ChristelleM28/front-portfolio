@@ -1,12 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Footer.css";
+import home from "../../assets/home.png";
 
 function FooterMenuContent() {
+
   return (
     <div className="footerMenuContent">
       <nav>
-        <Link to="/" className="home">Home</Link> 
+        <Link to="/" className="home"  >
+          <img src={home} alt="Home" height="50px" width="50px"/> </Link> 
         <Link to="/about" className="linkAbout">
           About
         </Link>

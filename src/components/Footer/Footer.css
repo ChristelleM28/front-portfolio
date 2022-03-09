@@ -6,7 +6,8 @@
 }
 
 .footerButton {
-  background-color: rgba(var(--lpink), 0.7);
+  /* background-color: rgba(var(--lpink), 0.7); */
+  background-color: rgba(var(--green), 0.7);
   /* color: rgba(var(--green), 0.9); */
   border-radius: 130px 130px 0 0;
   width: 80px;
@@ -30,8 +31,9 @@ display:none
   font-family: inherit;
   background-color: transparent;
   color: rgba(var(--lpink), 0.9);
-  font-size: 30px;
+  font-size: 26px;
   border: none;
+  transform: translatey(-30px);
   }
 
 .footerMenuContent nav{
@@ -42,10 +44,11 @@ font-size: 1.2rem;
 padding:1rem
 }
 
-a {
+nav a{
   text-decoration: none;
-  /* color: rgba(var(--green), 0.9); */
+  color: rgba(var(--green), 0.9);
 }
+
 
 @media screen and (min-width: 768px){
   .footerMenuContent nav{

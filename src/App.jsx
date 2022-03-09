@@ -19,19 +19,19 @@ function App() {
   // Vérification de connexion
   const [connected, setConnected] = useState(false);
 
-  useEffect(() => {
-    (async () => {
-      await axios
-        .post(`${API_URL}/api/auth/refreshToken`, {
-          withCredentials: true,
-        })
-        .then((response) => {
-          setConnected(response.data.id);
-          console.log(response);
-        })
-        .catch((err) => console.log(err.message));
-    })();
-  }, [connected]);
+  // useEffect(() => {
+  //   (async () => {
+  //     await axios
+  //       .post(`${API_URL}/api/auth/refreshToken`, {
+  //         withCredentials: true,
+  //       })
+  //       .then((response) => {
+  //         setConnected(response.data.id);
+  //         console.log(response);
+  //       })
+  //       .catch((err) => console.log(err.message));
+  //   })();
+  // }, [connected]);
 
   return (
     <div className="App">
@@ -64,6 +64,8 @@ function App() {
           element={<DashboardProject />}
         ></Route>
         {/* : "/"} */}
+
+        {/* {userco !== 0 ? <Route path="/admin" element={<AdminPage />} /> : null} */}
 
         <Route path="Admin/DashboardImage" element={<DashboardImage />}></Route>
         <Route path="*" element={<Navigate to="/" />}></Route>

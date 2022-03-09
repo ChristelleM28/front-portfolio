@@ -3,10 +3,11 @@ import { Navigate } from "react-router-dom";
 import axios from "axios";
 import Button from "../Button/Button";
 import "./Admin.css";
+import { toast } from "react-toastify";
 
 const API_URL = process.env.REACT_APP_API_PORTFOLIO_URL;
 
-function Admin({connected, setConnected}) {
+function Admin({ connected, setConnected }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -15,7 +16,7 @@ function Admin({connected, setConnected}) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!email || !password) {
-      alert("You must provide all fields");
+    toast.error("You must provide all fields");
     } else {
       try {
         const response = await axios.post(
@@ -34,10 +35,10 @@ function Admin({connected, setConnected}) {
           setPassword("");
           setFollowLink(!followLink);
         } else {
-          alert("Error");
+          toast.warning("Error");
         }
       } catch (err) {
-        alert(err.response.data);
+        toast.error("error ligne 41 containerAdmin");
       }
     }
   };

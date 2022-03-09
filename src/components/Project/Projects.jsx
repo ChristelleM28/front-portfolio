@@ -36,6 +36,7 @@ function Projects() {
         <Carousel
           infiniteLoop
           // thumbWidth={80}
+          // thumbindicator={false}
           showIndicators={false}
           // showArrows={false}
           showStatus={false}
