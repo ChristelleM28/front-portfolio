@@ -17,7 +17,7 @@ const API_URL = process.env.REACT_APP_API_PORTFOLIO_URL;
 
 function App() {
   // Vérification de connexion
-  const [connected, setConnected] = useState(false);
+  const [connected, setConnected] = useState(true);
 
   // useEffect(() => {
   //   (async () => {
@@ -37,14 +37,14 @@ function App() {
     <div className="App">
       {/* appel au composant d'alerte */}
       <ToastContainer
-      position="top-right"
-      autoClose={2000}
-      hideProgressBar={false}
-      newestOnTop={false}
-      closeOnClick
-      rtl={false}
-      pauseOnFocusLoss
-      pauseOnHover
+        position="top-right"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        pauseOnHover
       />
 
       <Routes>

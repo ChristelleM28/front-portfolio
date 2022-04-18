@@ -10,19 +10,11 @@
   border-radius: 15px;
 }
 
-.aboutMe {
+/* .aboutMe {
   margin: 10%;
   padding-top: 2rem;
   text-align: left;
-}
-
-h2 {
-  color: rgb(var(--blueg));
-}
-
-p {
-  margin: 3rem auto 3rem auto;
-}
+} */
 
 @media screen and (min-width: 768px) {
   .rectangleAbout {

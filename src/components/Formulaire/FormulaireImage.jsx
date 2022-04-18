@@ -49,7 +49,7 @@ function FormulaireImage({
     <div>
       <form id="formAdmin">
         <h2 className="admin"> DASHBOARD IMAGE </h2>
-        <div className="containerAdmin" id="formAdminId">
+        <div className="containerAdmin" >
           <div>
             <label htmlFor="selectFile" className="selectFile">
               <select name="image" id="image" value="" onChange={handleModify}>

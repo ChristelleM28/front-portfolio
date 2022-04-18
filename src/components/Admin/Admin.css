@@ -1,48 +1,36 @@
+.containerAdmin {
+  padding-bottom: 5em;
+  border-radius: 25px;
+}
+
 form#formAdmin {
   margin: auto;
-  margin-top: 3rem;
-  padding: 1rem;
   width: 80%;
-  height: auto;
-  border-radius: 20rem;
+  border-radius: 6rem;
   background-color: rgba(var(--green), 0.8);
-
   height: auto;
 }
-form#formAdminImage {
-  width: 80%;
-  border-radius: 20rem;
-  background-color: rgba(var(--green), 0.8);
-  height: 31rem;
-}
 
-form#formAdminProject {
-  width: 80%;
-  border-radius: 20rem;
-  background-color: rgba(var(--green), 0.8);
-  height: 36rem;
-
-}
-
-.admin, input {
+.admin,
+input {
   color: rgba(var(--lpink));
 }
 
-input, select {
+input,
+select {
   background-color: rgba(var(--lpink), 0.5);
   height: 2rem;
   width: 80%;
   margin-bottom: 1.5rem;
   border-radius: 5px;
   overflow: none;
-
 }
 
+select,
+textarea,
 input::placeholder {
   font-size: 1.5em;
-}
-
-select, textarea {
+  font-family: autofill;
   color: rgba(var(--blueg));
 }
 
@@ -52,31 +40,18 @@ textarea {
   border-radius: 5px;
 }
 
-input[type="date" i] {
+input[type="date" i],
+input[type="text" i],
+input[type="password" i],
+input[type="email" i] {
   color: var(--lpink);
+  border: none;
 }
 
 input:-internal-autofill-selected {
   color: rgba(var(--lpink));
 }
 
-@media screen and (min-width: 768px) {
-  form#formAdmin {
-    width: 80%;
-    border-radius: 50rem;
-    padding: 4rem;
-  }
-  form {
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  form#formAdmin {
-    margin: auto;
-    margin-top: 5%;
-    width: 50%;
-    border-radius: 20rem;
-    /* height: 32rem; */
-
-  }
+input:focus {
+  color: #ffff;
 }
