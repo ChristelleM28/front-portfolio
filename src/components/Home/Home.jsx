@@ -17,9 +17,9 @@ function Home() {
           <img src={light} alt="light" />
         </div>
         <div className="welcome">
-          <h2> Welcome to my</h2>
+          <h2> Bienvenu sur mon </h2>
           <h1 className="titleH1">PORTFOLIO</h1>
-          <h2> Christelle Marquier</h2>
+          <h2> Je m'appelle <span style={{color:'rgb(var(--blueg))'}}> Christelle </span> et je suis développeuse Web.</h2>
         </div>
 
         <Button title="See more" more="Let's go!" onClick={handleClick} />
