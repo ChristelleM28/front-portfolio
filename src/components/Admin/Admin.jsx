@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
 import axios from "axios";
+import DisconnectButton from "../DashboardButton/DisconnectButton";
 import Button from "../Button/Button";
 import "./Admin.css";
 import { toast } from "react-toastify";
@@ -38,13 +39,16 @@ function Admin({ connected, setConnected }) {
           toast.warning("Error");
         }
       } catch (err) {
-        toast.error("error ligne 41 containerAdmin");
+        toast.error("Login Error");
       }
     }
   };
 
   return (
     <div>
+      <div>
+        <DisconnectButton />
+      </div>
       <form id="formAdmin">
         <h2 className="admin"> ADMIN </h2>
         <div className="containerAdmin">
@@ -52,7 +56,7 @@ function Admin({ connected, setConnected }) {
             <label htmlFor="email" className="email">
               <input
                 type="email"
-                id="email"
+                id="date"
                 placeholder="@"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}

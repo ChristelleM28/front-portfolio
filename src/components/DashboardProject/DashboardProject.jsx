@@ -8,7 +8,6 @@ import DisconnectButton from "../DashboardButton/DisconnectButton";
 import AddProject from "./AddProject";
 import ModifyProject from "./ModifyProject";
 import DeleteProject from "./DeleteProject";
-import { toast } from "react-toastify";
 
 
 const API_URL = process.env.REACT_APP_API_PORTFOLIO_URL;

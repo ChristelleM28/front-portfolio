@@ -75,7 +75,7 @@ function DashboardImage() {
       </div>
 
       <div>
-        <Button title="Dashboard Image" more="OK!" onClick={handleClick} />
+        <Button title="Dashboard Project" more="OK!" onClick={handleClick} />
         {followLink ? <Navigate to="/admin/dashboardProject" /> : ""}
       </div>
 

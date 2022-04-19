@@ -4,28 +4,27 @@
   width: 80%;
   margin: 7vh auto ;
   border-radius: 15px;
-  /* position: relative; */
- 
 }
 
 .contactInput {
-  background-color: rgba(var(--lpink), 0.1);
+  padding:1.1rem;
+  background-color: rgba(var(--lpink), 0.7);
   height: 2rem;
   width: 80%;
-  margin-bottom: 2rem;
-  border-color: rgba(var(--green));
-  outline:none;
+color:rgba(var(--green));  
+border: none;
+}
 
+.contactInput:focus{
+  color:rgba(var(--green));  
 }
 
 .textAreaContact {
+    padding:1rem;
   height: 10rem;
-  /* height: initial; */
   background-color: rgba(var(--lpink), 0.5);
   width: 80%;
-  border-color: rgba(var(--green));
-  color:rgba(var(--green));
-  outline:rgba(var(--green));
+  border: none;
 }
 
 @media screen and (min-width: 768px) {

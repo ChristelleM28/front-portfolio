@@ -32,8 +32,10 @@ background-color:rgb(var(--black));
 /* Pour la mise en forme du bouton dashboard */
 .containerDashboardButton {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
  padding-bottom: 2rem;
+ width:80%;
+ margin:auto;
 }
 
 .dashboardButton.add {

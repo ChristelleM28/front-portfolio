@@ -92,6 +92,7 @@ function FormulaireProject({
             <label htmlFor="dateCreated" className="dateCreated">
               <input
                 readOnly={true}
+                type="text"
                 id="dateCreated"
                 placeholder="Date Created"
                 name="datecreated"

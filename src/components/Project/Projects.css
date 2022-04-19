@@ -1,8 +1,7 @@
 .projectListContainer {
-  margin: 3rem auto 1rem auto;
   background-color: rgba(var(--lpink), 0.5);
-  padding: 1rem;
   border-radius: 15px;
+  padding-bottom: 2rem;
 }
 
 .carousel {
@@ -19,10 +18,6 @@
   width: 100%;
 }
 
-li .slide {
-  position: relative;
-}
-
 .carousel .overlay {
   width: 80%;
   transform: translateY(-30%);
@@ -35,14 +30,15 @@ li .slide {
   margin-right: 1rem;
 }
 
-.overlay-description {
-  color: red;
-  height: 50px;
+/* pour obtenir une image-carousel ronde */
+.carousel .slider-wrapper img{
+  clip-path:ellipse(33% 50%);
 }
+
 
 /* pour les miniatures */
 .carousel .thumbs {
-  display: flex;
+  display:flex;
   cursor: pointer;
 }
 

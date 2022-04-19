@@ -7,9 +7,9 @@ function ModalCv({ onClick }) {
   
   return (
     <div className="modalCvContainer">
-      <button onClick={onClick}>Close</button>
+      <button className="buttonmodal"onClick={onClick}>X</button>
       <div className="modal">
-        <iframe classeName="iframeCv"
+        <iframe className="iframeCv"
           src={cv}
           title="cv"
           type="application/pdf"

@@ -9,7 +9,7 @@ function FooterMenuContent() {
     <div className="footerMenuContent">
       <nav>
         <Link to="/" className="home"  >
-          <img src={home} alt="Home" height="50px" width="50px"/> </Link> 
+          <img src={home} alt="Home" height="30px" width="auto"/> </Link> 
         <Link to="/about" className="linkAbout">
           About
         </Link>

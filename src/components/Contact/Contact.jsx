@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Button from "../Button/Button";
 import Footer from "../Footer/Footer";
 import axios from "axios";
+import ReseauxSociaux from "../ReseauxSociaux/ReseauxSociaux";
 import "./Contact.css";
 import { toast } from "react-toastify";
 
@@ -17,7 +18,7 @@ function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!newMessage.firstName || !newMessage.email || !newMessage.message) {
-         toast.error("You must provide all fields");
+        toast.error("You must provide all fields");
     } else {
       axios
         .post(`${API_URL}/api/contact/html`, newMessage)
@@ -36,6 +37,9 @@ function Contact() {
 
   return (
     <div>
+      <div className="socialMedia">
+        <ReseauxSociaux />
+      </div>
       <form className="contactMeForm">
         <h2 className="contactMe">CONTACT ME</h2>
         <div className="containerForm">
