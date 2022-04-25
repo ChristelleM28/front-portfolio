@@ -12,6 +12,8 @@ function FormulaireImage({
   handleChange,
   modifyImage,
   submited,
+  handleNewImage,
+  newImage
 }) {
   // Je récupère les projets
   const [projects, setProjects] = useState("");
@@ -49,7 +51,7 @@ function FormulaireImage({
     <div>
       <form id="formAdmin">
         <h2 className="admin"> DASHBOARD IMAGE </h2>
-        <div className="containerAdmin" >
+        <div className="containerAdmin">
           <div>
             <label htmlFor="selectFile" className="selectFile">
               <select name="image" id="image" value="" onChange={handleModify}>
@@ -70,13 +72,11 @@ function FormulaireImage({
 
           <div>
             <label htmlFor="selectProject" className="selectProject">
-              <select
-                name="projectName"
-                id="projectName"
-                onChange={onChange}
-              >
+              <select name="projectName" id="projectName" onChange={onChange}>
                 {/* initialisation du projet suite submit sélection */}
-                <option selected={selectedValue.projects_id ==="" ? "selected" : ""}>
+                <option
+                  selected={selectedValue.projects_id === "" ? "selected" : ""}
+                >
                   Select a project
                 </option>
 
@@ -117,6 +117,17 @@ function FormulaireImage({
                 onChange={handleChange}
               />
             </label>
+          </div>
+
+          <div>
+            <input
+              type="file"
+              id="imgFilename"
+              name="img_filename"
+              accept="image/*"
+              value={newImage.filename}
+              onChange={handleNewImage}
+            />
           </div>
 
           <div>

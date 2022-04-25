@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import DashboardButton from "../DashboardButton/DashboardButton";
+import DashboardButton from "./DashboardButton";
 import {Navigate} from "react-router-dom";
 
 function DisconnectButton() {

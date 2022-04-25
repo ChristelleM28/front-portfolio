@@ -11,6 +11,7 @@
 .contentCarousel {
   width: 90%;
   margin: auto;
+  /* display:flex; */
 }
 
 .carousel .slider {
@@ -20,7 +21,7 @@
 
 .carousel .overlay {
   width: 80%;
-  transform: translateY(-30%);
+  transform: translateY(-1rem);
   padding: 0.4rem 1.5rem;
   text-align: left;
   background: hsla(0, 0%, 0%, 0.5);
@@ -44,9 +45,11 @@
 
 @media screen and (min-width: 1024px) {
   .projectListContainer {
-    margin: 3rem;
+    margin: auto;
+    margin-top: 3rem;
     padding: 3rem;
     border-radius: 15px;
+    width:70%;
   }
 
   .carousel .overlay {

@@ -23,7 +23,7 @@ function FormulaireProject({
   return (
     <div>
       <form id="formAdmin">
-        <h2 className="admin"> DASHBOARD PROJECT </h2>
+        <h2 className="admin"> DASHBOARD PROJET </h2>
         <div className="containerAdmin" id="formAdminId">
           <div>
             <label htmlFor="selectFile" className="selectFile">
@@ -34,7 +34,7 @@ function FormulaireProject({
                 onChange={handleModify}
               >
                 <option selected={!modifyProject ? "selected" : ""}>
-                  Select a projects
+                  Selectionner un projet
                 </option>
                 {projects &&
                   projects.map((project) => {

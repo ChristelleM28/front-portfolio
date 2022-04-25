@@ -55,3 +55,10 @@ input:-internal-autofill-selected {
 input:focus {
   color: #ffff;
 }
+
+@media screen and (min-width: 1024px){
+
+form#formAdmin {
+  margin: auto;
+  width: 60%;
+}}

@@ -1,8 +1,9 @@
-b.modalCvContainer {
-  position: absolute;
+.modalCvContainer {
+  position: fixed;
   top: 0;
+  bottom: 0;
+  right: 0;
   left: 0;
-  height: 1200px;
   background: url(/public/assets/fond-portfolio.png) no-repeat center;
   padding-top: 2rem;
 }
@@ -40,7 +41,7 @@ button:hover .buttonmodal {
   iframe {
     display: flex;
     width: 80%;
-    height: 1200px;
+    height: 900px;
     margin: auto;
     border-radius: 50px;
   }

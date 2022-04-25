@@ -9,7 +9,7 @@ function About() {
   //j'initialise le state de mes évènements
   const [displayPdf, setDisplayPdf] = useState(false);
 
-  // je définie l'évènement sur lequel fonctionne le clic
+  // je définis l'évènement sur lequel fonctionne le clic
   const handleClick = () => {
     setDisplayPdf(true);
   };
@@ -21,7 +21,7 @@ function About() {
       </div>
       <div className="rectangleAbout">
         <div className="aboutMe">
-          <h2>ABOUT ME</h2>
+          <h2>A PROPOS</h2>
           <p>
             Après 14 ans de service aux clients et 4 ans de gestion de projets
             en étant l'interface entre les clients et les DSI, je décide de me
@@ -42,7 +42,7 @@ function About() {
             permettre d'évoluer au sein des métiers de la tech'.
           </p>
         </div>
-        <Button title="My CV" more="Let's go!" onClick={handleClick} />
+        <Button title="Mon CV" more="Allons-y!" onClick={handleClick} />
       </div>
       <div>
         {displayPdf && <ModalCv onClick={() => setDisplayPdf(!displayPdf)} />}

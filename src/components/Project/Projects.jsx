@@ -4,6 +4,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from "react-responsive-carousel";
 import Footer from "../Footer/Footer";
 import ReseauxSociaux from "../ReseauxSociaux/ReseauxSociaux";
+import Button from "../Button/Button";
 // import UploadImage from "./components/UploadImage/UploadImage";
 import "./Projects.css";
 
@@ -11,9 +12,12 @@ import "./Projects.css";
 const API_URL = process.env.REACT_APP_API_PORTFOLIO_URL;
 
 function Projects() {
-  // // Je créé ma variable pour stocker mes projets
+  // Je créé ma variable pour stocker mes projets
   const [projects, setProjects] = useState([]);
-  
+
+  //lien
+  const [show, setShow] = useState(false);
+
 
   //   // je fais mon appel à l'api
   useEffect(() => {
@@ -26,6 +30,9 @@ function Projects() {
       .catch((err) => console.error(err.message));
   }, []);
 
+  const handleClick = (e) => {
+    setShow(true)
+  };
 
   return (
     <div className="container">
@@ -39,16 +46,34 @@ function Projects() {
             infiniteLoop
             showIndicators={false}
             showStatus={false}
+            swipeable
+            centerSlidePercentage={50}
+            showThumbs={false}
+            autoplay={true}
+            // dynamicHeight
+            interval={2000}
+            transitionTime={50}
           >
             {projects &&
               projects.map((project) => (
                 <div key={project.id}>
-                  <img src={project.projet_link} alt="" className="img-size" />
+                  <div className="image-carousel">
+                    <img
+                      src={project.projet_link}
+                      alt=""
+                      className="img-size"
+                    />
+                  </div>
                   <div className="overlay">
                     <h3 className="overlay-title">{project.project_name}</h3>
                     <p className="overlay-description">
                       {project.project_description}
                     </p>
+                    <Button
+                      className="button-carousel"
+                      title="En savoir plus"
+                      onClick={() => handleClick(e)}
+                    />
                   </div>
                 </div>
               ))}

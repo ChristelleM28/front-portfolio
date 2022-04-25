@@ -16,11 +16,13 @@ const API_URL = process.env.REACT_APP_API_PORTFOLIO_URL;
 function DashboardImage() {
   
   //je récupère mes images
+  const [newImage, setNewImage] = useState({});
   const [images, setImages] = useState("");
   const [submited, setSubmited] = useState(false);
   const [selectedValue, setSelectedValue] = useState({
     img_name: "",
-    img_url: "",
+    img_filename: "",
+    img_url:"",
     img_description: "",
   });
 
@@ -34,6 +36,11 @@ function DashboardImage() {
       [e.target.name]: e.target.value,
     }));
   };
+
+  const handleNewImage = (e) => {
+    setNewImage(e.target.files[0]);
+  };
+  
 
   useEffect(() => {
     (async () => {
@@ -71,6 +78,8 @@ function DashboardImage() {
           setSelectedValueToto={setSelectedValue}
           handleChange={handleChange}
           submited={submited}
+          newImage={newImage}
+          handleNewImage={handleNewImage}
           />
       </div>
 
@@ -87,6 +96,7 @@ function DashboardImage() {
             setImages={setImages}
             images={images}
             setSubmited={setSubmited}
+            newImage={newImage}
           />
         </div>
         <div>

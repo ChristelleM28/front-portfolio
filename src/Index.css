@@ -42,6 +42,14 @@ body {
 }
 
 .reseauxSociaux-container{
-   margin-top: 0.5rem;
+  display:flex;
+  justify-content:center;
+  width:30%;
+  margin: auto;
+   /* margin-top: 0.5rem; */
 }
- 
+
+.social-logo{
+width:2rem;
+margin:0.5rem
+}
