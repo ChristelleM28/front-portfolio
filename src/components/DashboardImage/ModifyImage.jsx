@@ -21,7 +21,7 @@ function ModifyImage({ selectedValue, setSelectedValue, setModifyImage }) {
           // alert("Image modified succesfully");
           setSelectedValue({
             img_name:"",
-            img_url: "",
+            img_filename: "",
             img_description: "",
           });
           setModifyImage(true);

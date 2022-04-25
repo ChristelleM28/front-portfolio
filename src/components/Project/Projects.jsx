@@ -12,8 +12,12 @@ import "./Projects.css";
 const API_URL = process.env.REACT_APP_API_PORTFOLIO_URL;
 
 function Projects() {
-  // // Je créé ma variable pour stocker mes projets
+  // Je créé ma variable pour stocker mes projets
   const [projects, setProjects] = useState([]);
+
+  //lien
+  const [show, setShow] = useState(false);
+
 
   //   // je fais mon appel à l'api
   useEffect(() => {
@@ -25,6 +29,10 @@ function Projects() {
       })
       .catch((err) => console.error(err.message));
   }, []);
+
+  const handleClick = (e) => {
+    setShow(true)
+  };
 
   return (
     <div className="container">
@@ -41,7 +49,7 @@ function Projects() {
             swipeable
             centerSlidePercentage={50}
             showThumbs={false}
-            autoplay
+            autoplay={true}
             // dynamicHeight
             interval={2000}
             transitionTime={50}
@@ -64,6 +72,7 @@ function Projects() {
                     <Button
                       className="button-carousel"
                       title="En savoir plus"
+                      onClick={() => handleClick(e)}
                     />
                   </div>
                 </div>

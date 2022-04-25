@@ -45,9 +45,11 @@
 
 @media screen and (min-width: 1024px) {
   .projectListContainer {
-    margin: 3rem;
+    margin: auto;
+    margin-top: 3rem;
     padding: 3rem;
     border-radius: 15px;
+    width:70%;
   }
 
   .carousel .overlay {

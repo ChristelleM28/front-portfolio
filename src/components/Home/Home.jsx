@@ -27,7 +27,7 @@ function Home() {
 
         <div>
           <Link to="/about" className="about">
-            About me
+            A propos de moi...
           </Link>
         </div>
       </div>

@@ -11,10 +11,10 @@ function FooterMenuContent() {
         <Link to="/" className="home"  >
           <img src={home} alt="Home" height="30px" width="auto"/> </Link> 
         <Link to="/about" className="linkAbout">
-          About
+          A propos
         </Link>
         <Link to="/projects" className="linkProjectList">
-          Project
+          Projets
         </Link>
         <Link to="/contact" className="linkContact">
           Contact

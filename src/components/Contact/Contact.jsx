@@ -41,7 +41,7 @@ function Contact() {
         <ReseauxSociaux />
       </div>
       <form className="contactMeForm">
-        <h2 className="contactMe">CONTACT ME</h2>
+        <h2 className="contactMe"> ME CONTACTER</h2>
         <div className="containerForm">
           <div>
             <label htmlFor="firstName" className="firstName">
@@ -88,7 +88,7 @@ function Contact() {
             </label>
           </div>
 
-          <Button title="Send" more="Thank You!" onClick={handleSubmit} />
+          <Button title="Envoyer" more="Merci!" onClick={handleSubmit} />
         </div>
       </form>
       <Footer />

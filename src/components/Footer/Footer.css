@@ -7,7 +7,7 @@
 }
 
 .footerButton {
-  background-color: rgba(var(--green), 0.7);
+  background-color: rgba(var(--blueg), 0.7);
   border-radius: 130px 130px 0 0;
   width: 10rem;
   height: 2rem;
@@ -41,7 +41,7 @@
   margin: auto;
   font-size: 1.2rem;
   padding: 1rem;
-  background-color: rgba(var(--green), 0.7);
+  background-color: rgba(var(--blueg), 0.7);
 }
 
 nav a {

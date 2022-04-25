@@ -30,6 +30,7 @@ function DeleteImage({
           setSelectedValueToto({
             image_name: "",
             image_url: "",
+            image_filename:"",
             image_description: "",
           });
         } else {
