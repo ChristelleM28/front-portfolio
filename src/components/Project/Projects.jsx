@@ -15,11 +15,15 @@ function Projects() {
   // Je créé ma variable pour stocker mes projets
   const [projects, setProjects] = useState([]);
 
+  const [files, setFiles] = useState([]);
+
+  //Je créé ma variable pour stocker mes images
+  const [images, setImages] = useState([]);
+
   //lien
   const [show, setShow] = useState(false);
 
-
-  //   // je fais mon appel à l'api
+  // je fais mon appel à l'api
   useEffect(() => {
     axios
       .get(`${API_URL}/api/projects/`)
@@ -30,9 +34,9 @@ function Projects() {
       .catch((err) => console.error(err.message));
   }, []);
 
-  const handleClick = (e) => {
-    setShow(true)
-  };
+  // const handleClick = (e) => {
+  //   setShow(true)
+  // };
 
   return (
     <div className="container">
@@ -50,36 +54,35 @@ function Projects() {
             centerSlidePercentage={50}
             showThumbs={false}
             autoplay={true}
-            // dynamicHeight
             interval={2000}
             transitionTime={50}
           >
             {projects &&
               projects.map((project) => (
                 <div key={project.id}>
-                  <div className="image-carousel">
-                    <img
-                      src={project.projet_link}
-                      alt=""
-                      className="img-size"
-                    />
-                  </div>
+
+                        <img
+                          src={`${API_URL}/images/${project.images[0]?.img_filename}`}
+                          alt=""
+                          className="img-size"
+                        />
+                    
                   <div className="overlay">
                     <h3 className="overlay-title">{project.project_name}</h3>
                     <p className="overlay-description">
                       {project.project_description}
                     </p>
-                    <Button
+
+                    {/* <Button
                       className="button-carousel"
                       title="En savoir plus"
                       onClick={() => handleClick(e)}
-                    />
+                    /> */}
                   </div>
                 </div>
               ))}
-          </Carousel>
 
-          {/* <UploadImage/> */}
+          </Carousel>
         </div>
         <Footer />
       </div>

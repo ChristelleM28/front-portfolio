@@ -26,6 +26,10 @@ select {
   overflow: none;
 }
 
+.input-file{
+  background-color:transparent;
+}
+
 select,
 textarea,
 input::placeholder {
