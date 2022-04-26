@@ -120,7 +120,7 @@ function FormulaireImage({
           </div>
 
           <div>
-            <input
+            <input className="input-file"
               type="file"
               id="imgFilename"
               name="img_filename"

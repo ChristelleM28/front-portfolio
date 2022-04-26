@@ -62,7 +62,7 @@ function FormulaireProject({
             </label>
           </div>
 
-          <div>
+          {/* <div>
             <label htmlFor="projetLink" className="projetLink">
               <input
                 type="text"
@@ -73,7 +73,7 @@ function FormulaireProject({
                 onChange={handleChange}
               />
             </label>
-          </div>
+          </div> */}
 
           <div>
             <label htmlFor="projectDate" className="projectDate">
