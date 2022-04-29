@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Button from "../Button/Button";
-import Footer from "../Footer/Footer";
+import Button from "../../components/Button/Button";
+import Footer from "../../components/Footer/Footer";
 import axios from "axios";
-import ReseauxSociaux from "../ReseauxSociaux/ReseauxSociaux";
+import ReseauxSociaux from "../../components/ReseauxSociaux/ReseauxSociaux";
 import "./Contact.css";
 import { toast } from "react-toastify";
 
@@ -18,14 +18,14 @@ function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!newMessage.firstName || !newMessage.email || !newMessage.message) {
-        toast.error("You must provide all fields");
+        toast.error("Vous devez compléter tous les champs");
     } else {
       axios
         .post(`${API_URL}/api/contact/html`, newMessage)
         .then((res) => {
           if (res.status === 200) {
             // alert("Thank You!");
-            toast.success("You message has been submitted!");
+            toast.success("Votre message a ien été envoyé!");
             setNewMessage("");
           } else {
             console.log(res);

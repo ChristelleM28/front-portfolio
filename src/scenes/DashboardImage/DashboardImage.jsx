@@ -1,33 +1,35 @@
 import React, { useState, useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import axios from "axios";
-import Button from "../Button/Button";
-import FormulaireProject from "../Formulaire/FormulaireProject";
+import Button from "../../components/Button/Button";
+import FormulaireImage from "../DashboardImage/FormulaireImage";
 import "../Admin/Admin.css";
-import DisconnectButton from "../DashboardButton/DisconnectButton";
-import AddProject from "./AddProject";
-import ModifyProject from "./ModifyProject";
-import DeleteProject from "./DeleteProject";
+import DisconnectButton from "../../components/DashboardButton/DisconnectButton";
+import AddImage from "./AddImage";
+import ModifyImage from "./ModifyImage";
+import DeleteImage from "./DeleteImage";
+import { toast } from "react-toastify";
 
 
 const API_URL = process.env.REACT_APP_API_PORTFOLIO_URL;
 
-function DashboardProject() {
-
-  //je récupère mes projects
-  const [projects, setProjects] = useState("");
+function DashboardImage() {
+  
+  //je récupère mes images
+  const [newImage, setNewImage] = useState({});
+  const [images, setImages] = useState("");
   const [submited, setSubmited] = useState(false);
   const [selectedValue, setSelectedValue] = useState({
-    project_name: "",
-    projet_link: "",
-    project_date: "",
-    project_description: "",
+    img_name: "",
+    img_filename: "",
+    img_url:"",
+    img_description: "",
   });
 
   // je définis mon state de modification
-  const [modifyProject, setModifyProject] = useState(false);
+  const [modifyImage, setModifyImage] = useState(false);
 
-  // je gère ma sélection
+    // je gère ma sélection
   const handleChange = (e) => {
     setSelectedValue((prevstate) => ({
       ...prevstate,
@@ -35,19 +37,25 @@ function DashboardProject() {
     }));
   };
 
+  const handleNewImage = (e) => {
+    setNewImage(e.target.files[0]);
+  };
+  
+
   useEffect(() => {
     (async () => {
       await axios
-        .get(`${API_URL}/api/projects/`)
+        .get(`${API_URL}/api/images/`)
         .then((response) => response.data)
         .then((data) => {
-          setProjects(data);
+          setImages(data);
         })
         .catch((err) => {
           console.log(err);
+          toast.error("error")
         });
     })();
-  }, [modifyProject, submited]);
+  }, [modifyImage, submited]);
 
   //lien pour aller vers le dashboardImage
   const [followLink, setFollowLink] = useState(false);
@@ -62,46 +70,49 @@ function DashboardProject() {
       </div>
 
       <div>
-        <FormulaireProject
-          projects={projects}
+        <FormulaireImage
+          images={images}
+          setImages={setImages}
           selectedValue={selectedValue}
+          setSelectedValue={setSelectedValue}
           setSelectedValueToto={setSelectedValue}
           handleChange={handleChange}
-          setModifyProject={setModifyProject}
-        />
+          submited={submited}
+          newImage={newImage}
+          handleNewImage={handleNewImage}
+          />
       </div>
 
       <div>
-        <Button title="Dashboard Image" more="OK!" onClick={handleClick} />
-        {followLink ? <Navigate to="/admin/dashboardImage" /> : ""}
+        <Button title="Dashboard Project" more="OK!" onClick={handleClick} />
+        {followLink ? <Navigate to="/admin/dashboardProject" /> : ""}
       </div>
 
       <div className="containerDashboardButton">
         <div>
-          <AddProject
+          <AddImage
             selectedValue={selectedValue}
             setSelectedValueToto={setSelectedValue}
-            setProjects={setProjects}
-            projects={projects}
+            setImages={setImages}
+            images={images}
             setSubmited={setSubmited}
+            newImage={newImage}
           />
         </div>
         <div>
-          <ModifyProject
+          <ModifyImage
             selectedValue={selectedValue}
             setSelectedValue={setSelectedValue}
-            setModifyProject={setModifyProject}
+            setModifyImage={setModifyImage}
           />
         </div>
 
         <div>
-          <DeleteProject
+          <DeleteImage
             selectedValue={selectedValue}
             setSelectedValueToto={setSelectedValue}
-            setProjects={setProjects}
-            projects={projects}
-            alert={
-              "The project is deleted!"}
+            setImages={setImages}
+            images={images}
           />
         </div>
       </div>
@@ -109,4 +120,4 @@ function DashboardProject() {
   );
 }
 
-export default DashboardProject;
+export default DashboardImage;

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Button from "../Button/Button";
-import Footer from "../Footer/Footer";
-import ModalCv from "../Cv/ModalCv";
-import ReseauxSociaux from "../ReseauxSociaux/ReseauxSociaux";
+import Button from "../../components/Button/Button";
+import Footer from "../../components/Footer/Footer";
+import ModalCv from "./ModalCv";
+import ReseauxSociaux from "../../components/ReseauxSociaux/ReseauxSociaux";
 import "./About.css";
 
 function About() {
