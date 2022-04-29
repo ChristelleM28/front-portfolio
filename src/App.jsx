@@ -1,17 +1,17 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Home from "./components/Home/Home";
-import About from "./components/About/About";
-import Projects from "./components/Project/Projects";
-import Contact from "./components/Contact/Contact";
-import Admin from "./components/Admin/Admin";
-import DashboardProject from "./components/DashboardProject/DashboardProject";
-import DashboardImage from "./components/DashboardImage/DashboardImage";
+import Home from "./scenes/Home/Home";
+import About from "./scenes/About/About";
+import Projects from "./scenes/Project/Projects";
+import Contact from "./scenes/Contact/Contact";
+import Admin from "./scenes/Admin/Admin";
+import DashboardProject from "./scenes/DashboardProject/DashboardProject";
+import DashboardImage from "./scenes/DashboardImage/DashboardImage";
 import "./App.css";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Connect from "./components/Admin/Connect";
+import Connect from "./scenes/Admin/Connect";
 
 const API_URL = process.env.REACT_APP_API_PORTFOLIO_URL;
 

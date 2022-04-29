@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import DashboardButton from "../DashboardButton/DashboardButton";
+import DashboardButton from "../../components/DashboardButton/DashboardButton";
 import { toast } from "react-toastify";
 
 const API_URL = process.env.REACT_APP_API_PORTFOLIO_URL;
@@ -17,7 +17,7 @@ function AddProject({
     e.preventDefault();
     if (
       !selectedValue.project_name ||
-      !selectedValue.projet_link ||
+      // !selectedValue.projet_link ||
       !selectedValue.project_date ||
       !selectedValue.project_description
     ) {
@@ -37,19 +37,19 @@ function AddProject({
               );
               setSelectedValueToto({
                 project_name: "",
-                projet_link: "",
+                // projet_link: "",
                 project_date: "",
                 project_description: "",
               });
               setSubmited(true)
             } else {
               // alert("Error");
-              toast.error("error addproject ligne 49");
+              toast.error("error addproject ligne 47");
             }
           });
       } catch (err) {
         console.log(err.response);
-        toast.error("error addproject ligne 54");
+        toast.error("error addproject ligne 52");
         // alert(err.response.data);
       }
     }

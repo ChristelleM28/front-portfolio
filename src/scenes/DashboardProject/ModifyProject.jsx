@@ -1,7 +1,7 @@
 import React from "react";
 import moment from "moment";
 import axios from "axios";
-import DashboardButton from "../DashboardButton/DashboardButton";
+import DashboardButton from "../../components/DashboardButton/DashboardButton";
 import { toast } from "react-toastify";
 
 const API_URL = process.env.REACT_APP_API_PORTFOLIO_URL;

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
 import axios from "axios";
-import DisconnectButton from "../DashboardButton/DisconnectButton";
-import Button from "../Button/Button";
+import DisconnectButton from "../../components/DashboardButton/DisconnectButton";
+import Button from "../../components/Button/Button";
 import "./Admin.css";
 import { toast } from "react-toastify";
 
@@ -39,7 +39,7 @@ function Admin({ connected, setConnected }) {
           toast.warning("Error");
         }
       } catch (err) {
-        toast.error("Login Error");
+        toast.error("Login Error 42");
       }
     }
   };

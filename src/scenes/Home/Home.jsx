@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
-import Button from "../Button/Button";
+import Button from "../../components/Button/Button";
 import light from "../../assets/light.png";
 import "./Home.css";
 
@@ -22,7 +22,7 @@ function Home() {
           <h2> Je m'appelle <span style={{color:'rgb(var(--blueg))'}}> Christelle </span> et je suis développeuse Web.</h2>
         </div>
 
-        <Button title="See more" more="Let's go!" onClick={handleClick} />
+        <Button title="Voir plus" more="Allons-y!" onClick={handleClick} />
         {followLink ? <Navigate to="/Projects" /> : ""}
 
         <div>

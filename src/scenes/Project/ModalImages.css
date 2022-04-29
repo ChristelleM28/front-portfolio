@@ -1,0 +1,22 @@
+.modal-images-container {
+  background: hsla(0, 0%, 0%, 0.9);
+  position:fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.modalImage {
+  height: 250px;
+}
+
+.swiper-modal-image img{
+  height: 250px;
+}
+
+.modal-images-container .buttonmodal
+{
+transform:none;
+}
