@@ -10,7 +10,7 @@ function FormulaireProject({
   modifyProject,
   setModifyProject,
 }) {
-  // gère la modification du project
+  // fonction qui est appelée lorsque l'utilisateur selectionne un projet depuis select
   const handleModify = (e) => {
     setModifyProject(true);
     setSelectedValueToto(
@@ -34,7 +34,7 @@ function FormulaireProject({
                 onChange={handleModify}
               >
                 <option selected={!modifyProject ? "selected" : ""}>
-                  Selectionner un projet
+                  Sélectionner un projet
                 </option>
                 {projects &&
                   projects.map((project) => {
@@ -55,7 +55,6 @@ function FormulaireProject({
                 id="projectName"
                 name="project_name"
                 placeholder="Project Name"
-                //exemple si on a plusieurs states pour alléger le code
                 value={selectedValue.project_name}
                 onChange={handleChange}
               />

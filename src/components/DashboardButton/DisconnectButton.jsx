@@ -17,7 +17,7 @@ function DisconnectButton() {
           buttonName="Disconnect"
           onClick={handleDisconnect}
         />
-        {disconnect ? <Navigate to="/admin" /> : ""}
+        {disconnect ? <Navigate to="/" /> : ""}
       </div>
     </div>
   )
