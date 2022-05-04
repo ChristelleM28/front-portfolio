@@ -1,19 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import axios from "axios";
-import Button from "../../components/DashboardButton/DashboardButton";
+import Button from "../../components/Button/Button";
 import FormulaireProject from "../DashboardProject/FormulaireProject";
-import "../Admin/Admin.css";
 import DisconnectButton from "../../components/DashboardButton/DisconnectButton";
 import AddProject from "./AddProject";
 import ModifyProject from "./ModifyProject";
 import DeleteProject from "./DeleteProject";
-
+import "../Admin/Admin.css";
 
 const API_URL = process.env.REACT_APP_API_PORTFOLIO_URL;
 
 function DashboardProject() {
-
   //je récupère mes projects
   const [projects, setProjects] = useState("");
   const [submited, setSubmited] = useState(false);
@@ -27,7 +25,7 @@ function DashboardProject() {
   // je définis mon state de modification
   const [modifyProject, setModifyProject] = useState(false);
 
-  // je gère ma sélection
+  // je gère ma sélection I'm creating a new object, which is a copy of the previous state, and I'm updating the value of the key that corresponds to the name of the input that was changed
   const handleChange = (e) => {
     setSelectedValue((prevstate) => ({
       ...prevstate,
@@ -35,6 +33,7 @@ function DashboardProject() {
     }));
   };
 
+//j'interroge mon back et récupère l'ensemble de mes projets
   useEffect(() => {
     (async () => {
       await axios
@@ -100,8 +99,7 @@ function DashboardProject() {
             setSelectedValueToto={setSelectedValue}
             setProjects={setProjects}
             projects={projects}
-            alert={
-              "The project is deleted!"}
+            alert={"The project is deleted!"}
           />
         </div>
       </div>
