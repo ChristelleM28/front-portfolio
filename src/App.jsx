@@ -63,9 +63,9 @@ function App() {
           path="Admin/DashboardProject"
           element={<DashboardProject />}
         ></Route>
-        {/* : "/"} */}
+         {/* : "/"}  */}
 
-        {/* {userco !== 0 ? <Route path="/admin" element={<AdminPage />} /> : null} */}
+        {/* {userco !== 0 ? <Route path="/admin" element={<Admin />} /> : null} */}
 
         <Route path="Admin/DashboardImage" element={<DashboardImage />}></Route>
         <Route path="*" element={<Navigate to="/" />}></Route>
