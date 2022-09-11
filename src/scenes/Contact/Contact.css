@@ -8,21 +8,24 @@
 
 .contactInput {
   padding:1.1rem;
-  background-color: rgba(var(--lpink), 0.7);
   height: 2rem;
   width: 80%;
-color:rgba(var(--green));  
+color:rgba(var(--darkslategray));  
 border: none;
 }
 
+#email.contactInput {
+  color:rgba(var(--darkslategray));  
+}
+
 .contactInput:focus{
-  color:rgba(var(--green));  
+color:rgba(var(--darkslategray));  
 }
 
 .textAreaContact {
     padding:1rem;
   height: 10rem;
-  background-color: rgba(var(--lpink), 0.5);
+  color:rgba(var(--darkslategray));  
   width: 80%;
   border: none;
 }

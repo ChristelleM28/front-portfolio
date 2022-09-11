@@ -18,12 +18,16 @@ input {
 
 input,
 select {
-  background-color: rgba(var(--lpink), 0.5);
+  /* background-color: rgba(var(--lpink), 0.5); */
   height: 2rem;
   width: 80%;
   margin-bottom: 1.5rem;
   border-radius: 5px;
   overflow: none;
+}
+
+#dateCreated {
+  background-color: rgba(var(--lpink), 0.5);
 }
 
 .input-file{
